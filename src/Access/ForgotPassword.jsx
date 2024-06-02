@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import { Box, TextField, Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import Link from '@mui/material/Link';
-
-import logo from '../Assets/Caasi-croped-logo.png'
+// import MarkunreadIcon from '@mui/icons-material/Markunread';
+import forgotPassword from '../Assets/forgotPassword.jpeg'
+import { Link } from "react-router-dom";
 
 const Root = styled(Box)({
     margin: 0,
@@ -33,8 +30,24 @@ const Root = styled(Box)({
                     border: "none",
                     backgroundColor: '#EBEBEB',
                     zIndex: -1
+                },
+                "& .MuiOutlinedInput-root": {
+                    borderRadius: "10px"
                 }
+
+            },
+            "& .MuiButtonBase-root": {
+                borderRadius: "10px"
+            },
+            "& .MuiTypography-root": {
+                marginLeft: '5px',
+                marginBottom: "5px",
+            },
+            "& .MuiButtonBase-root": {
+                textTransform: "none",
+                borderRadius: "10px"
             }
+
         },
     },
 });
@@ -49,71 +62,73 @@ const ForgotPassword = () => {
     const handleLogIn = () => {
         setCondition(true);
         console.log(data);
+
     };
 
     return (
         <Root>
             <Box className="mainContainer">
                 <Box className="content" >
-                    <Box style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Box style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: 40 }}>
                         <Box className='logo'>
-                            <img src={logo} width='100%' alt="logo" />
+                            <img src={forgotPassword} width='100%' alt="logo" />
                         </Box>
                     </Box>
-                    <Box sx={{ textAlign: "start", marginBottom: 3 }}>
-                        <Typography variant="h4">Wellcome!</Typography>
-                    </Box>
+                    <Box style={{ display: "flex", justifyContent: "center", flexDirection: 'column', gap: '10px' }}>
+                        <Box style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: 'column', gap: '15px' }}>
+                            <Box sx={{ textAlign: "center" }}>
+                                <Typography fontWeight='bold' variant="h6">Forgot Password</Typography>
+                            </Box>
+                            <Box sx={{ textAlign: "center", marginBottom: 3 }}>
+                                <Typography >Enter your Email and we'll send you a link to reset your password</Typography>
+                            </Box>
+                        </Box>
 
-                    <Box>
-                        <Typography variant="body1">Email</Typography>
-                        <TextField
-                            className="textField"
-                            required
-                            fullWidth
-                            type="email"
-                            id="email"
-                            size="small"
-                            name="email"
-                            value={data?.email || ""}
-                            onChange={handleChange}
-                            placeholder="Enter Email"
-                            error={condition && !data?.email}
-                            helperText={condition && !data?.email && "Enter Email"}
-                        />
-                    </Box>
-                    <Box>
-                        <Typography variant="body1">Password</Typography>
-                        <TextField
-                            required
-                            fullWidth
-                            className="textField"
-                            size="small"
-                            name="password"
-                            value={data?.password || ""}
-                            onChange={handleChange}
-                            type="password"
-                            id="password"
-                            placeholder="Enter Password"
-                            error={condition && !data?.password}
-                            helperText={condition && !data?.password && "Enter Password"}
-                        />
-                    </Box>
-                    <Link
-                        href="#"
-                        sx={{
-                            textDecoration: 'none',
-                            color: 'primary', // Inherit color from parent
-                            textAlign: 'end',
-                            marginBottom: 2,
-                            // marginTop: 2
-                        }}
-                    >
-                        <Typography variant="body2">Forget Password?</Typography>
+                        <Box style={{ display: "flex", justifyContent: "center", flexDirection: 'column', gap: '10px' }}>
+                            <Box>
+                                <Typography color='#777474' variant="body1">Email</Typography>
+                                <TextField
+                                    className="textField"
+                                    required
+                                    fullWidth
+                                    type="email"
+                                    id="email"
+                                    size="small"
+                                    name="email"
+                                    value={data?.email || ""}
+                                    onChange={handleChange}
+                                    placeholder="abc@email.com"
+                                    error={condition && !data?.email}
+                                    helperText={condition && !data?.email && "Enter  your email"}
 
-                    </Link>
-                    <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
-                        LogIn
-                    </Button>
+                                // InputProps={{
+                                //     startAdornment: (
+                                //         <InputAdornment position="start">
+                                //             <MarkunreadIcon />
+                                //         </InputAdornment>
+                                //     ),
+                                // }}
+                                />
+                            </Box>
+                            <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
+                                Submit
+                            </Button>
+                            <Box>
+                                <Link
+                                    href="login.jsx"
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: 'primary', // Inherit color from parent
+                                        textAlign: 'end',
+                                        marginBottom: 2,
+                                    }}
+                                >
+                                    <Typography variant="body2">Back to login</Typography>
+
+                                </Link>
+                            </Box>
+                        </Box>
+                    </Box>
                 </Box>
             </Box>
         </Root>

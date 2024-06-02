@@ -33,7 +33,13 @@ const Root = styled(Box)({
           border: "none",
           backgroundColor: '#EBEBEB',
           zIndex: -1
-        }
+        },
+        "& .MuiOutlinedInput-root": {
+          borderRadius: "10px"
+        },
+        // "& .MuiButtonBase-root": {
+        //   textTransform: "none",
+        // }
       }
     },
   },
@@ -111,7 +117,7 @@ const Login = () => {
 
           </Link>
           <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
-            LogIn
+            Login
           </Button>
         </Box>
       </Box>
