@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import {Box, Checkbox} from "@mui/material";
+import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
-// import logo from '../Assets/logoe.png'
+import Link from '@mui/material/Link';
+
+import logo from '../Assets/Caasi-croped-logo.png'
+
 const Root = styled(Box)({
   margin: 0,
   "& .mainContainer": {
@@ -17,22 +20,27 @@ const Root = styled(Box)({
       width: "35vw",
       margin: "auto",
       padding: "20px",
-    borderRadius: "10px",
-    boxShadow: "0px 2px 12px 2px #cccccc",
-      "& .logo":{
-        display:'flex',
-        justifyContent:"center",
-        width:"200px"
+      borderRadius: "10px",
+      boxShadow: "0px 2px 12px 2px #cccccc",
+      "& .logo": {
+        display: 'flex',
+        justifyContent: "center",
+        width: "237px"
       },
-      "& .textField":{
-        marginBottom:"10px"
+      "& .textField": {
+        marginBottom: "10px",
+        "& .MuiOutlinedInput-notchedOutline": {
+          border: "none",
+          backgroundColor: '#EBEBEB',
+          zIndex: -1
+        },
+        "& .MuiOutlinedInput-root": {
+          borderRadius: "10px"
+        },
       },
-      "& .checkboxSec":{
-        display:"flex",alignItems:"center",
-
-        "& Checkbox":{
-          merginLeft:"-5px"
-        }
+      "& .MuiButton-root": {
+        borderRadius: "10px",
+        textTransform: "none",
       }
     },
   },
@@ -42,7 +50,7 @@ const Login = () => {
   const [condition, setCondition] = useState(false);
 
   const handleChange = (event) => {
-    setData((pre) => ({ ...pre, [event.target.name]: event.target.value }));
+    setData({ ...data, [event.target.name]: event.target.value });
   };
 
   const handleLogIn = () => {
@@ -54,17 +62,19 @@ const Login = () => {
     <Root>
       <Box className="mainContainer">
         <Box className="content" >
-          {/* <Box className='logo'>
-         <img src={logo} width='100%' alt="logo"/>
-          </Box> */}
-         <Box sx={{textAlign:"center"}}>
-         <Typography variant="h6">Enter your email and password to login</Typography>
-         </Box>
+          <Box style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <Box className='logo'>
+              <img src={logo} width='100%' alt="logo" />
+            </Box>
+          </Box>
+          <Box sx={{ textAlign: "start", marginBottom: 3 }}>
+            <Typography variant="h4">Wellcome!</Typography>
+          </Box>
 
           <Box>
             <Typography variant="body1">Email</Typography>
             <TextField
-            className="textField"
+              className="textField"
               required
               fullWidth
               type="email"
@@ -75,7 +85,7 @@ const Login = () => {
               onChange={handleChange}
               placeholder="Enter Email"
               error={condition && !data?.email}
-              helperText={condition && !data?.email && "Enter Email"}
+              helperText={condition && !data?.email && "Enter your Email"}
             />
           </Box>
           <Box>
@@ -92,16 +102,24 @@ const Login = () => {
               id="password"
               placeholder="Enter Password"
               error={condition && !data?.password}
-              helperText={condition && !data?.password && "Enter Password"}
+              helperText={condition && !data?.password && "Enter your Password"}
             />
           </Box>
-          <Box className="checkboxSec">
-            <Checkbox  defaultChecked />
-            <Typography variant="body1">Rememeber me next time</Typography>
-          </Box>
-            <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
-              LogIn
-            </Button>
+          <Link
+            href=""
+            sx={{
+              textDecoration: 'none',
+              color: 'primary', // Inherit color from parent
+              textAlign: 'end',
+              marginBottom: 2,
+            }}
+          >
+            <Typography variant="body2">Forget Password?</Typography>
+
+          </Link>
+          <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
+            Login
+          </Button>
         </Box>
       </Box>
     </Root>
