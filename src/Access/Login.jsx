@@ -4,9 +4,10 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
-import Link from '@mui/material/Link';
+import Link from "@mui/material/Link";
 
-import logo from '../Assets/Caasi-croped-logo.png'
+import logo from "../Assets/Caasi-croped-logo.png";
+import { UserServices } from "../Services/User/UserServices";
 
 const Root = styled(Box)({
   margin: 0,
@@ -23,25 +24,25 @@ const Root = styled(Box)({
       borderRadius: "10px",
       boxShadow: "0px 2px 12px 2px #cccccc",
       "& .logo": {
-        display: 'flex',
+        display: "flex",
         justifyContent: "center",
-        width: "237px"
+        width: "237px",
       },
       "& .textField": {
         marginBottom: "10px",
         "& .MuiOutlinedInput-notchedOutline": {
           border: "none",
-          backgroundColor: '#EBEBEB',
-          zIndex: -1
+          backgroundColor: "#EBEBEB",
+          zIndex: -1,
         },
         "& .MuiOutlinedInput-root": {
-          borderRadius: "10px"
+          borderRadius: "10px",
         },
       },
       "& .MuiButton-root": {
         borderRadius: "10px",
         textTransform: "none",
-      }
+      },
     },
   },
 });
@@ -53,18 +54,33 @@ const Login = () => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
 
-  const handleLogIn = () => {
+  const handleLogIn = async () => {
+    try {
+      let res = await UserServices.loginUser(data);
+      if (res.success) {
+      } else {
+        alert(res.mesage);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
     setCondition(true);
-    console.log(data);
   };
 
   return (
     <Root>
       <Box className="mainContainer">
-        <Box className="content" >
-          <Box style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <Box className='logo'>
-              <img src={logo} width='100%' alt="logo" />
+        <Box className="content">
+          <Box
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box className="logo">
+              <img src={logo} width="100%" alt="logo" />
             </Box>
           </Box>
           <Box sx={{ textAlign: "start", marginBottom: 3 }}>
@@ -108,16 +124,20 @@ const Login = () => {
           <Link
             href=""
             sx={{
-              textDecoration: 'none',
-              color: 'primary', // Inherit color from parent
-              textAlign: 'end',
+              textDecoration: "none",
+              color: "primary", // Inherit color from parent
+              textAlign: "end",
               marginBottom: 2,
             }}
           >
             <Typography variant="body2">Forget Password?</Typography>
-
           </Link>
-          <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
+          <Button
+            size="large"
+            variant="contained"
+            fullWidth
+            onClick={handleLogIn}
+          >
             Login
           </Button>
         </Box>
