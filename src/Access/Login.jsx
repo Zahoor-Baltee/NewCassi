@@ -37,9 +37,10 @@ const Root = styled(Box)({
         "& .MuiOutlinedInput-root": {
           borderRadius: "10px"
         },
-        // "& .MuiButtonBase-root": {
-        //   textTransform: "none",
-        // }
+      },
+      "& .MuiButton-root": {
+        borderRadius: "10px",
+        textTransform: "none",
       }
     },
   },
@@ -84,7 +85,7 @@ const Login = () => {
               onChange={handleChange}
               placeholder="Enter Email"
               error={condition && !data?.email}
-              helperText={condition && !data?.email && "Enter Email"}
+              helperText={condition && !data?.email && "Enter your Email"}
             />
           </Box>
           <Box>
@@ -101,7 +102,7 @@ const Login = () => {
               id="password"
               placeholder="Enter Password"
               error={condition && !data?.password}
-              helperText={condition && !data?.password && "Enter Password"}
+              helperText={condition && !data?.password && "Enter your Password"}
             />
           </Box>
           <Link

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import { Box, TextField, Button, Typography, InputAdornment } from "@mui/material";
 import { styled } from "@mui/system";
-// import MarkunreadIcon from '@mui/icons-material/Markunread';
+import MarkunreadIcon from '@mui/icons-material/Markunread';
 import forgotPassword from '../Assets/forgotPassword.jpeg'
 import { Link } from "react-router-dom";
 
@@ -35,9 +35,6 @@ const Root = styled(Box)({
                     borderRadius: "10px"
                 }
 
-            },
-            "& .MuiButtonBase-root": {
-                borderRadius: "10px"
             },
             "& .MuiTypography-root": {
                 marginLeft: '5px',
@@ -100,14 +97,13 @@ const ForgotPassword = () => {
                                     placeholder="abc@email.com"
                                     error={condition && !data?.email}
                                     helperText={condition && !data?.email && "Enter  your email"}
-
-                                // InputProps={{
-                                //     startAdornment: (
-                                //         <InputAdornment position="start">
-                                //             <MarkunreadIcon />
-                                //         </InputAdornment>
-                                //     ),
-                                // }}
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <MarkunreadIcon />
+                                            </InputAdornment>
+                                        ),
+                                    }}
                                 />
                             </Box>
                             <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
@@ -115,7 +111,7 @@ const ForgotPassword = () => {
                             </Button>
                             <Box>
                                 <Link
-                                    href="login.jsx"
+                                    href=""
                                     style={{
                                         textDecoration: 'none',
                                         color: 'primary', // Inherit color from parent

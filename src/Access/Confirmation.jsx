@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from 'react';
 import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import forgotPassword from '../Assets/confirmation.jpeg'
@@ -34,9 +34,6 @@ const Root = styled(Box)({
                 }
 
             },
-            "& .MuiButtonBase-root": {
-                borderRadius: "10px"
-            },
             "& .MuiTypography-root": {
                 marginLeft: '5px',
                 marginBottom: "5px",
@@ -50,18 +47,7 @@ const Root = styled(Box)({
     },
 });
 const Confirmation = () => {
-    const [data, setData] = useState({});
-    const [condition, setCondition] = useState(false);
 
-    const handleChange = (event) => {
-        setData((pre) => ({ ...pre, [event.target.name]: event.target.value }));
-    };
-
-    const handleLogIn = () => {
-        setCondition(true);
-        console.log(data);
-
-    };
 
     return (
         <Root>
@@ -83,7 +69,7 @@ const Confirmation = () => {
                         </Box>
 
                         <Box>
-                            <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
+                            <Button size="large" variant="contained" fullWidth>
                                 Done
                             </Button>
 
