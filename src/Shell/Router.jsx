@@ -11,8 +11,8 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/" element={<WithLayout component={<Login />} />} />
+        <Route path="/forgotpassword" element={<DefaultLayout />} />
         <Route path="/confirmation" element={<Confirmation />} />
 
         <Route path="/productlist" element={<WithLayout component="" />} />
