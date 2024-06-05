@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, TextField, Button, Typography, InputAdornment } from "@mui/material";
 import { styled } from "@mui/system";
 import MarkunreadIcon from '@mui/icons-material/Markunread';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import forgotPassword from '../Assets/forgotPassword.jpeg'
 import { Link } from "react-router-dom";
 
@@ -11,14 +12,15 @@ const Root = styled(Box)({
         width: "100%",
         height: "calc(100vh - 16px)",
         display: "flex",
-        alignItems: "center",
+        flexDirection: "column",
+        // alignItems: "center",
         "& .content": {
             display: "grid",
             width: "35vw",
             margin: "auto",
             padding: "20px",
             borderRadius: "10px",
-            boxShadow: "0px 2px 12px 2px #cccccc",
+            // boxShadow: "0px 2px 12px 2px #cccccc",
             "& .logo": {
                 display: 'flex',
                 justifyContent: "center",
@@ -77,7 +79,7 @@ const ForgotPassword = () => {
                                 <Typography fontWeight='bold' variant="h6">Forgot Password</Typography>
                             </Box>
                             <Box sx={{ textAlign: "center", marginBottom: 3 }}>
-                                <Typography >Enter your Email and we'll send you a link to reset your password</Typography>
+                                <Typography >Enter your Email and we'll send you a link to reset  your password</Typography>
                             </Box>
                         </Box>
 
@@ -109,22 +111,27 @@ const ForgotPassword = () => {
                             <Button size="large" variant="contained" fullWidth onClick={handleLogIn}>
                                 Submit
                             </Button>
-                            <Box>
-                                <Link
-                                    href=""
-                                    style={{
-                                        textDecoration: 'none',
-                                        color: 'primary', // Inherit color from parent
-                                        textAlign: 'end',
-                                        marginBottom: 2,
-                                    }}
-                                >
-                                    <Typography variant="body2">Back to login</Typography>
 
-                                </Link>
-                            </Box>
                         </Box>
                     </Box>
+
+                </Box>
+                <Box>
+                    <Link
+                        href=""
+                        style={{
+                            textDecoration: 'none',
+                            color: 'primary', // Inherit color from parent
+                            textAlign: 'start',
+                            marginBottom: 2,
+                            display: 'flex', // To align text and icon horizontally
+                            alignItems: 'center',
+                        }}
+                    >
+                        <ArrowCircleLeftOutlinedIcon style={{ marginRight: 8 }} />
+                        <Typography variant="body2">Back to login</Typography>
+
+                    </Link>
                 </Box>
             </Box>
         </Root>

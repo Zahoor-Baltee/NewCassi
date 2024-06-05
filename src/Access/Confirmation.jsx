@@ -16,11 +16,11 @@ const Root = styled(Box)({
             margin: "auto",
             padding: "20px",
             borderRadius: "10px",
-            boxShadow: "0px 2px 12px 2px #cccccc",
+            // boxShadow: "0px 2px 12px 2px #cccccc",
             "& .logo": {
                 display: 'flex',
                 justifyContent: "center",
-                width: "130px"
+                width: "200px"
             },
             "& .textField": {
                 marginBottom: "10px",
@@ -39,6 +39,7 @@ const Root = styled(Box)({
                 marginBottom: "5px",
             },
             "& .MuiButtonBase-root": {
+                width: "300px",
                 textTransform: "none",
                 borderRadius: "10px"
             }
@@ -64,11 +65,15 @@ const Confirmation = () => {
                                 <Typography fontWeight='bold' variant="h6">Confirmation</Typography>
                             </Box>
                             <Box sx={{ textAlign: "center", marginBottom: 3 }}>
-                                <Typography >A link to reset your password has been sent to your Email.</Typography>
+                                <Typography >A link to reset your password has been sent to  your Email.</Typography>
                             </Box>
                         </Box>
 
-                        <Box>
+                        <Box sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                        }
+                        }>
                             <Button size="large" variant="contained" fullWidth>
                                 Done
                             </Button>
