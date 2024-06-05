@@ -47,21 +47,6 @@ const Root = styled(Box)({
   },
 });
 const Confirmation = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [alert, setAlert] = useState({
-    color: "primary",
-    message: "successfull",
-    isOpen: false,
-  });
-  const handleConformation = () => {
-    setIsLoading(true);
-    setAlert({
-      ...alert,
-      color: "success",
-      message: "Api complete ",
-      isOpen: true,
-    });
-  };
   return (
     <Root>
       <Box className="mainContainer">
@@ -101,28 +86,13 @@ const Confirmation = () => {
             </Box>
 
             <Box>
-              <Button
-                onClick={handleConformation}
-                size="large"
-                variant="contained"
-                fullWidth
-              >
+              <Button size="large" variant="contained" fullWidth>
                 Done
               </Button>
             </Box>
           </Box>
         </Box>
       </Box>
-      {/* {isLoading ? <SubmitLoader /> : ""} */}
-      {alert.isOpen ? (
-        <Alert
-          open={alert.isOpen}
-          message={alert.message}
-          color={alert.color}
-        />
-      ) : (
-        ""
-      )}
     </Root>
   );
 };

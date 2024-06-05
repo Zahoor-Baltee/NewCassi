@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
 import Link from "@mui/material/Link";
-
+import logo1 from "../Assets/cassilogo.png";
 import logo from "../Assets/Caasi-croped-logo.png";
 import { UserServices } from "../Services/User/UserServices";
 
@@ -13,16 +13,37 @@ const Root = styled(Box)({
   margin: 0,
   "& .mainContainer": {
     width: "100%",
+    border: "20 px solid",
     height: "calc(100vh - 16px)",
     display: "flex",
     alignItems: "center",
+    "& .content1": {
+      display: "grid",
+      backgroundColor: "#0171BC",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      width: "50%",
+      // margin: "auto",
+      // padding: "20px",
+      // borderRadius: "10px",
+      "& .logo1": {
+        display: "flex",
+        justifyContent: "center",
+        width: "200px",
+      },
+      "& .sideLogo": {
+        borderRadius: "100px"
+      }
+    },
     "& .content": {
       display: "grid",
-      width: "35vw",
+      width: "25vw",
       margin: "auto",
-      padding: "20px",
-      borderRadius: "10px",
-      boxShadow: "0px 2px 12px 2px #cccccc",
+
+      // padding: "20px",
+      // borderRadius: "10px",
+      // boxShadow: "0px 2px 12px 2px #cccccc",
       "& .logo": {
         display: "flex",
         justifyContent: "center",
@@ -71,20 +92,43 @@ const Login = () => {
   return (
     <Root>
       <Box className="mainContainer">
-        <Box className="content">
-          <Box
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box className="logo">
-              <img src={logo} width="100%" alt="logo" />
-            </Box>
+        <Box className="content1">
+          <Box style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "200px",
+            width: "200px",
+            borderRadius: "50px",
+            '@media (max-width: 600px)': {
+              display: "none"
+            },
+          }}>
+            <img className="sideLogo" src={logo1} width="100%" alt="logo" />
           </Box>
-          <Box sx={{ textAlign: "start", marginBottom: 3 }}>
-            <Typography variant="h4">Wellcome!</Typography>
+        </Box>
+        <Box className="content">
+          <Box style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "30px",
+
+
+          }}>
+            <Box
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Box className="logo">
+                <img src={logo} width="100%" alt="logo" />
+              </Box>
+            </Box>
+            <Box sx={{ textAlign: "start", marginBottom: 3 }}>
+              <Typography variant="h4">Wellcome!</Typography>
+            </Box>
           </Box>
 
           <Box>
@@ -128,6 +172,7 @@ const Login = () => {
               color: "primary", // Inherit color from parent
               textAlign: "end",
               marginBottom: 2,
+              fontWeight: "bolder"
             }}
           >
             <Typography variant="body2">Forget Password?</Typography>
@@ -142,7 +187,7 @@ const Login = () => {
           </Button>
         </Box>
       </Box>
-    </Root>
+    </Root >
   );
 };
 
