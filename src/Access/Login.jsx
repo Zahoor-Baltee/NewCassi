@@ -13,7 +13,7 @@ const Root = styled(Box)({
   margin: 0,
   "& .mainContainer": {
     width: "100%",
-    border: "20 px solid",
+    // border: "20 px solid",
     height: "calc(100vh - 16px)",
     display: "flex",
     alignItems: "center",
@@ -22,7 +22,7 @@ const Root = styled(Box)({
       backgroundColor: "#0171BC",
       justifyContent: "center",
       alignItems: "center",
-      height: "100vh",
+      height: "100%",
       width: "50%",
       // margin: "auto",
       // padding: "20px",
@@ -33,13 +33,14 @@ const Root = styled(Box)({
         width: "200px",
       },
       "& .sideLogo": {
-        borderRadius: "100px"
-      }
+        borderRadius: "100px",
+      },
     },
     "& .content": {
       display: "grid",
       width: "25vw",
       margin: "auto",
+      height: "auto",
 
       // padding: "20px",
       // borderRadius: "10px",
@@ -93,28 +94,27 @@ const Login = () => {
     <Root>
       <Box className="mainContainer">
         <Box className="content1">
-          <Box style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "200px",
-            width: "200px",
-            borderRadius: "50px",
-            '@media (max-width: 600px)': {
-              display: "none"
-            },
-          }}>
+          <Box
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "200px",
+              width: "200px",
+              borderRadius: "50px",
+            }}
+          >
             <img className="sideLogo" src={logo1} width="100%" alt="logo" />
           </Box>
         </Box>
         <Box className="content">
-          <Box style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "30px",
-
-
-          }}>
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "30px",
+            }}
+          >
             <Box
               style={{
                 display: "flex",
@@ -172,7 +172,7 @@ const Login = () => {
               color: "primary", // Inherit color from parent
               textAlign: "end",
               marginBottom: 2,
-              fontWeight: "bolder"
+              fontWeight: "bolder",
             }}
           >
             <Typography variant="body2">Forget Password?</Typography>
@@ -187,7 +187,7 @@ const Login = () => {
           </Button>
         </Box>
       </Box>
-    </Root >
+    </Root>
   );
 };
 
