@@ -133,7 +133,9 @@ export default function MiniDrawer(props) {
             height: "64px",
           }}
         >
-          <img src={dashBoardLogo} width="100%" alt="" />
+          <a href="">
+            <img src={dashBoardLogo} width="100%" alt="" />
+          </a>
         </DrawerHeader>
         <Divider />
         <List>
