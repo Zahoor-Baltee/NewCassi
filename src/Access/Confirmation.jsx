@@ -18,7 +18,7 @@ const Root = styled(Box)({
       margin: "auto",
       padding: "20px",
       borderRadius: "10px",
-      boxShadow: "0px 2px 12px 2px #cccccc",
+      // boxShadow: "0px 2px 12px 2px #cccccc",
       "& .logo": {
         display: "flex",
         justifyContent: "center",

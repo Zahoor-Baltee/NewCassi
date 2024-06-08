@@ -16,9 +16,13 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import ReceiptIcon from '@mui/icons-material/Receipt';
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ParkIcon from '@mui/icons-material/Park';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import { Home } from "@mui/icons-material";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 240;
 
@@ -91,11 +95,40 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function MiniDrawer(props) {
+  const routeList = [
+    "Home",
+    "Add an expense report",
+    "Add an activity report",
+    "Absense",
+    "History",
+    "Setting",
+  ]
   const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
   };
+  const getIconByIndex = (index) => {
+    if (index === 0) {
+      return <Home />
+    } else if (index === 1) {
+      return <ReceiptIcon />
+    }
+    else if (index === 2) {
+      return <CalendarMonthIcon />
+    }
+    else if (index === 3) {
+      return <ParkIcon />
+    }
+    else if (index === 4) {
+      return <WatchLaterIcon />
+    } else {
+      return <SettingsIcon />
+    }
+  }
+  const handleNavigate = (index) => {
+
+  }
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -139,15 +172,8 @@ export default function MiniDrawer(props) {
         </DrawerHeader>
         <Divider />
         <List>
-          {[
-            "Home",
-            "Add an expense report",
-            "Add an activity report",
-            "Absense",
-            "History",
-            "Setting",
-          ].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+          {routeList.map((text, index) => (
+            <ListItem onclick={() => handleNavigate(index)} key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -161,8 +187,8 @@ export default function MiniDrawer(props) {
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
                   }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                >{getIconByIndex(index)}
+                  {/* {index === 0 ? <InboxIcon /> : index === 1 ? <MailIcon /> : index === 2 ? <CalendarMonthIcon />:''} */}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>

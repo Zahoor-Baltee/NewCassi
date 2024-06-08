@@ -4,7 +4,7 @@ import Login from "../Access/Login";
 import DefaultLayout from "../Layout/DefaultLayout";
 import ForgotPassword from "../Access/ForgotPassword";
 import Confirmation from "../Access/Confirmation";
-import Homepage from "../Pages/Employee/Home/Homepage";
+import Homepage from "../Pages/Homepage";
 const WithLayout = ({ component }) => {
   return <DefaultLayout>{component}</DefaultLayout>;
 };
