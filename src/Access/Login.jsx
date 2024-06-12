@@ -8,12 +8,12 @@ import Link from "@mui/material/Link";
 import logo1 from "../Assets/cassilogo.png";
 import logo from "../Assets/Caasi-croped-logo.png";
 import { UserServices } from "../Services/User/UserServices";
+import { useNavigate } from "react-router-dom";
 
 const Root = styled(Box)({
   margin: 0,
   "& .mainContainer": {
     width: "100%",
-    // border: "20 px solid",
     height: "calc(100vh - 16px)",
     display: "flex",
     alignItems: "center",
@@ -24,9 +24,6 @@ const Root = styled(Box)({
       alignItems: "center",
       height: "100%",
       width: "50%",
-      // margin: "auto",
-      // padding: "20px",
-      // borderRadius: "10px",
       "& .logo1": {
         display: "flex",
         justifyContent: "center",
@@ -41,10 +38,6 @@ const Root = styled(Box)({
       width: "25vw",
       margin: "auto",
       height: "auto",
-
-      // padding: "20px",
-      // borderRadius: "10px",
-      // boxShadow: "0px 2px 12px 2px #cccccc",
       "& .logo": {
         display: "flex",
         justifyContent: "center",
@@ -71,6 +64,7 @@ const Root = styled(Box)({
 const Login = () => {
   const [data, setData] = useState({});
   const [condition, setCondition] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
@@ -169,7 +163,7 @@ const Login = () => {
             href=""
             sx={{
               textDecoration: "none",
-              color: "primary", // Inherit color from parent
+              color: "primary",
               textAlign: "end",
               marginBottom: 2,
               fontWeight: "bolder",
@@ -181,7 +175,7 @@ const Login = () => {
             size="large"
             variant="contained"
             fullWidth
-            onClick={handleLogIn}
+            onClick={() => navigate("/dashboard")}
           >
             Login
           </Button>

@@ -81,6 +81,8 @@ const Homepage = () => {
         </Box>
         <Box>
           <Typography sx={{
+            marginTop: "20px",
+            marginBottom: "10px",
             fontSize: "20px",
             fontWeight: "600"
           }}>Dashboard</Typography>
