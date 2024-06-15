@@ -7,6 +7,8 @@ import Select from '@mui/material/Select';
 import { TextField } from '@mui/material';
 import MicRoundedIcon from '@mui/icons-material/MicRounded';
 import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
+import Button from "@mui/material/Button";
+
 
 
 const Root = styled(Box)({
@@ -15,9 +17,12 @@ const Root = styled(Box)({
         backgroundColor: "#f3f3f3",
         padding: "40px",
         height: "calc(100vh - 16px)",
+        display: "flex",
+        flexDirection: 'column',
+        gap: "50px",
         "& .MuiButtonBase-root": {
             textTransform: "none",
-            borderRadius: "10px"
+            // borderRadius: "10px"
         },
         "& .uiBox-root": {
             backgroundColor: "green",
@@ -44,17 +49,16 @@ const EnterExpenseReport = () => {
     }
     const [value, setValue] = React.useState('');
 
-    // const handleChange = (event) => {
-    //     setValue(event.target.value);
-    // };
+
     return (
         <Root>
-            <Box className="mainContainer">
+            <Box className="mainContainer" >
                 <Box sx={{
                     height: "350px", backgroundColor: "#ffffff",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    // gap: "50px",
                     borderRadius: "10px",
                     boxShadow: 0
                 }}>
@@ -97,24 +101,30 @@ const EnterExpenseReport = () => {
 
                     </Box>
 
-                    <Box sx={{ display: "flex" }}>
+                    <Box sx={{ display: "flex", gap: "20px" }}>
                         <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                            <Box sx={{ border: "1px solid ", padding: "10px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%", height: "80px", width: "80px" }}>
-                                <MicRoundedIcon sx={{ fontSize: "40px" }} />
+                            <Box sx={{ border: "1px solid ", padding: "5px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%", height: "60px", width: "60px" }}>
+                                <MicRoundedIcon sx={{ fontSize: "30px" }} />
 
                             </Box>
-                            <Typography sx={{}}>Record your report</Typography>
+                            <Typography sx={{ fontSize: "14px", marginTop: "10px" }}>Record your report</Typography>
                         </Box>
 
-                        <Box >
-                            <Box sx={{ border: "1px solid ", padding: "10px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%", height: "80px", width: "80px" }}>
-                                <DocumentScannerIcon sx={{ fontSize: "40px" }} />
+                        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                            <Box sx={{ border: "1px solid ", padding: "5px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%", height: "60px", width: "60px" }}>
+                                <DocumentScannerIcon sx={{ fontSize: "30px" }} />
                             </Box>
-                            <Typography sx={{}}>Scan your report</Typography>
+                            <Typography sx={{ fontSize: "14px", marginTop: "10px" }}>Scan your report</Typography>
                         </Box>
                     </Box>
-
-
+                </Box>
+                <Box sx={{
+                    display: "flex", justifyContent: "end", gap: "40px"
+                }}>
+                    <Button variant="outlined" color="error">
+                        Reset
+                    </Button>
+                    <Button variant="contained">Submit</Button>
                 </Box>
             </Box>
 
