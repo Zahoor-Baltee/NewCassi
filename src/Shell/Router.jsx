@@ -6,6 +6,7 @@ import ForgotPassword from "../Access/ForgotPassword";
 import Confirmation from "../Access/Confirmation";
 import Homepage from "../Pages/Homepage";
 import EnterExpenseReport from "../Pages/EnterExpenseReport";
+import NewDashboard from "../Pages/NewDashboard";
 const WithLayout = ({ component }) => {
   return <DefaultLayout>{component}</DefaultLayout>;
 };
@@ -16,7 +17,8 @@ const Router = () => {
         <Route path="/" element={<Login />} />
         <Route
           path="/dashboard"
-          element={<WithLayout component={<Homepage />} />}
+          element={<WithLayout component={<NewDashboard />} />}
+        // element={<WithLayout component={<Homepage />} />}
         />
         <Route
           path="/enterexpensereport"
@@ -26,6 +28,7 @@ const Router = () => {
         <Route path="/confirmation" element={<Confirmation />} />
 
         <Route path="/productlist" element={<WithLayout component="" />} />
+        <Route path="/newdashboard" element={<NewDashboard />} />
       </Routes>
     </BrowserRouter>
   );
