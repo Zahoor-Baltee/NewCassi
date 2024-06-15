@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, colors } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/system";
 import MenuItem from '@mui/material/MenuItem';
@@ -13,6 +13,12 @@ import Button from "@mui/material/Button";
 
 const Root = styled(Box)({
     margin: 0,
+    textField: {
+        backgroundColor: 'lightblue', // Your background color
+        '& input::placeholder': {
+            color: 'rgba(0, 0, 0, 0.5)' // Adjust the opacity or color of the placeholder text
+        }
+    },
     "& .mainContainer": {
         backgroundColor: "#f3f3f3",
         padding: "40px",
@@ -38,18 +44,35 @@ const Root = styled(Box)({
             border: "none",
             backgroundColor: "#C9E9F7",
             borderRadius: "0px 0px 5px 5px"
-        }
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: 'transparent',
+                backgroundColor: "#C9E9F7",
+            },
+        },
+
     },
 });
 const EnterExpenseReport = () => {
     const [category, setCategory] = React.useState('');
-
-    const handleChange = (event) => {
+    const CategoryhandleChange = (event) => {
         setCategory(event.target.value);
     }
+<<<<<<< HEAD
     const [value, setValue] = React.useState('');
 
 
+=======
+    const [amount, setAmount] = React.useState('');
+    const AmounthandleChange = (event) => {
+        setAmount(event.target.value);
+    };
+    const [date, setDate] = React.useState('');
+    const DatehandleChange = (event) => {
+        setDate(event.target.value);
+    };
+>>>>>>> ec01cc83c67c478e0f2c230bff439ff427e71ccf
     return (
         <Root>
             <Box className="mainContainer" >
@@ -63,13 +86,13 @@ const EnterExpenseReport = () => {
                     boxShadow: 0
                 }}>
                     <Box>
-                        <FormControl sx={{ m: 1, width: "300px" }}>
+                        <FormControl sx={{ m: 1, width: "300px", }}>
                             <Select
                                 value={category}
-                                onChange={handleChange}
+                                onChange={CategoryhandleChange}
                                 displayEmpty
                             >
-                                <MenuItem value="">
+                                <MenuItem value="" >
                                     <em>Select a Category</em>
                                 </MenuItem>
                                 <MenuItem value={10}>Ten</MenuItem>
@@ -77,18 +100,19 @@ const EnterExpenseReport = () => {
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </Select>
                         </FormControl>
-                        <TextField sx={{ m: 1, width: "300px" }}
+                        <TextField
+                            sx={{ m: 1, width: "300px" }}
                             label="Basic Input"
                             variant="outlined"
-                            value={value}
-                            onChange={handleChange}
+                            value={amount}
+                            onChange={AmounthandleChange}
                             fullWidth
                         />
                         <TextField sx={{ m: 1, width: "300px" }}
                             label="Basic Input"
                             variant="outlined"
-                            value={value}
-                            onChange={handleChange}
+                            value={date}
+                            onChange={DatehandleChange}
                             fullWidth
                         />
 
