@@ -7,6 +7,7 @@ import Confirmation from "../Access/Confirmation";
 import Homepage from "../Pages/Homepage";
 import EnterExpenseReport from "../Pages/EnterExpenseReport";
 import NewDashboard from "../Pages/NewDashboard";
+import TickPlacementBars from "../Pages/Chart";
 const WithLayout = ({ component }) => {
   return <DefaultLayout>{component}</DefaultLayout>;
 };
@@ -29,6 +30,7 @@ const Router = () => {
 
         <Route path="/productlist" element={<WithLayout component="" />} />
         <Route path="/newdashboard" element={<NewDashboard />} />
+        <Route path="/chart" element={<TickPlacementBars />} />
       </Routes>
     </BrowserRouter>
   );

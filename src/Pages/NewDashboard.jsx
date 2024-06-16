@@ -7,6 +7,7 @@ import clientGraph from '../Assets/clientGraph.png';
 import activityGraph from '../Assets/activityGraph.png';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
+import TickPlacementBars from './Chart';
 
 const Root = styled(Box)({
     margin: 0,
@@ -63,24 +64,15 @@ const Root = styled(Box)({
         "& .secondSection": {
             width: "475px",
             height: "345px",
-            top: "117px",
-            left: "31px",
-            gap: "0px",
-            borderRadius: "20px 0px 0px 0px",
-            opacity: "0px"
+            borderRadius: "20px",
+            backgroundColor: " #FFFFFF",
+            BorderTop: "1px dashed red"
 
         },
         "& .expenseReportPerDay": {
             display: "flex",
             justifyContent: "space-between",
-            width: "475px",
-            height: "345px",
-            top: "117px",
-            left: "31px",
-            gap: "0px",
-            borderRadius: "20px",
-            opacity: "0px",
-            backgroundColor: " #FFFFFF"
+            padding: "20px 20px 0px 20px",
         }
 
     }
@@ -229,10 +221,14 @@ const NewDashboard = () => {
                                     color: "#1B2559"
                                 }}>$682.5</Typography>
                             </Box>
+
                         </Box>
                         <Box sx={{ height: "33px", width: "33px", borderRadius: "7px", backgroundColor: "#F4F7FE", display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <BarChartRoundedIcon sx={{ color: "#0171BB" }} />
                         </Box>
+                    </Box>
+                    <Box>
+                        <TickPlacementBars />
                     </Box>
                 </Box>
 
