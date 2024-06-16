@@ -59,7 +59,30 @@ const Root = styled(Box)({
             justifyContent: "space-around",
             alignItems: "center",
             padding: "10px"
+        },
+        "& .secondSection": {
+            width: "475px",
+            height: "345px",
+            top: "117px",
+            left: "31px",
+            gap: "0px",
+            borderRadius: "20px 0px 0px 0px",
+            opacity: "0px"
+
+        },
+        "& .expenseReportPerDay": {
+            display: "flex",
+            justifyContent: "space-between",
+            width: "475px",
+            height: "345px",
+            top: "117px",
+            left: "31px",
+            gap: "0px",
+            borderRadius: "20px",
+            opacity: "0px",
+            backgroundColor: " #FFFFFF"
         }
+
     }
 
 });
@@ -100,7 +123,7 @@ const NewDashboard = () => {
                 {/* --------------------First Section--------------- */}
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                     <Box className="spentThisMonth">
-                        <Box className="">
+                        <Box>
                             <Typography sx={{
                                 fontWeight: 500,
                                 fontSize: "14px",
@@ -179,6 +202,40 @@ const NewDashboard = () => {
                     </Box>
 
                 </Box>
+
+                {/* --------------------First Section Complete--------------- */}
+
+
+
+                {/* --------------------Second Section Start--------------- */}
+                <Box className='secondSection'>
+                    <Box className='expenseReportPerDay'>
+                        <Box>
+                            <Box>
+                                <Typography sx={{
+                                    fontWeight: 500,
+                                    fontSize: "14px",
+                                    lineHeight: "24px",
+                                    letterSpacing: "-2%",
+                                    color: "#B3B3B3"
+                                }}>expense reports per day</Typography>
+                            </Box>
+                            <Box>
+                                <Typography sx={{
+                                    fontSize: "24px",
+                                    fontWeight: 600,
+                                    lineHeight: "32px",
+                                    letterSpacing: "-2%",
+                                    color: "#1B2559"
+                                }}>$682.5</Typography>
+                            </Box>
+                        </Box>
+                        <Box sx={{ height: "33px", width: "33px", borderRadius: "7px", backgroundColor: "#F4F7FE", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <BarChartRoundedIcon sx={{ color: "#0171BB" }} />
+                        </Box>
+                    </Box>
+                </Box>
+
 
 
             </Box>

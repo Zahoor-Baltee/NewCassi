@@ -59,11 +59,9 @@ const EnterExpenseReport = () => {
     const CategoryhandleChange = (event) => {
         setCategory(event.target.value);
     }
-<<<<<<< HEAD
+
     const [value, setValue] = React.useState('');
 
-
-=======
     const [amount, setAmount] = React.useState('');
     const AmounthandleChange = (event) => {
         setAmount(event.target.value);
@@ -72,7 +70,7 @@ const EnterExpenseReport = () => {
     const DatehandleChange = (event) => {
         setDate(event.target.value);
     };
->>>>>>> ec01cc83c67c478e0f2c230bff439ff427e71ccf
+
     return (
         <Root>
             <Box className="mainContainer" >
