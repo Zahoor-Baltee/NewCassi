@@ -113,106 +113,16 @@ const NewDashboard = () => {
                     </Box>
                 </Box>
                 {/* --------------------First Section--------------- */}
-                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                    <Box className="spentThisMonth">
-                        <Box>
-                            <Typography sx={{
-                                fontWeight: 500,
-                                fontSize: "14px",
-                                letterSpacing: "-2%",
-                                color: "#B3B3B3"
-                            }}>Spent this month</Typography>
-                            <Typography sx={{
-                                fontSize: "24px",
-                                fontWeight: 600,
-                                lineHeight: "32px",
-                                letterSpacing: "-2%",
-                                color: "#1B2559"
-                            }}>$682.5</Typography>
-                        </Box>
-                        <Box><img src={ChartImg} alt="" /></Box>
-                    </Box>
-                    <Box className="newClients">
-                        <Box sx={{ height: "56px", width: "56px", borderRadius: "50%", backgroundColor: "#0171BB", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                            <PeopleAltIcon sx={{ color: "#ffffff" }} />
-                        </Box>
-                        <Box className="">
-                            <Typography sx={{
-                                fontWeight: 500,
-                                fontSize: "14px",
-                                letterSpacing: "-2%",
-                                color: "#B3B3B3"
-                            }}>New clients</Typography>
-                            <Typography sx={{
-                                fontSize: "24px",
-                                fontWeight: 600,
-                                lineHeight: "32px",
-                                letterSpacing: "-2%",
-                                color: "#1B2559"
-                            }}>321</Typography>
-                        </Box>
-                        <Box><img src={clientGraph} alt="" /></Box>
-                    </Box>
-                    <Box className="earning">
-                        <Box sx={{ height: "56px", width: "56px", borderRadius: "50%", backgroundColor: "#f4f7f6", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                            <BarChartRoundedIcon sx={{ color: "#0171BB" }} />
-                        </Box>
-                        <Box className="">
-                            <Typography sx={{
-                                fontWeight: 500,
-                                fontSize: "14px",
-                                letterSpacing: "-2%",
-                                color: "#B3B3B3"
-                            }}>Earning</Typography>
-                            <Typography sx={{
-                                fontSize: "24px",
-                                fontWeight: 600,
-                                lineHeight: "32px",
-                                letterSpacing: "-2%",
-                                color: "#1B2559"
-                            }}>$350.40</Typography>
-                        </Box>
-
-                    </Box>
-                    <Box className="activity">
-                        <Box className="">
-                            <Typography sx={{
-                                fontWeight: 500,
-                                fontSize: "14px",
-                                letterSpacing: "-2%",
-                                color: "#E9EDF7"
-                            }}>Activity</Typography>
-                            <Typography sx={{
-                                fontSize: "24px",
-                                fontWeight: 600,
-                                lineHeight: "32px",
-                                letterSpacing: "-2%",
-                                color: "#ffffff"
-                            }}>$540.50</Typography>
-                        </Box>
-                        <Box><img src={activityGraph} alt="" /></Box>
-                    </Box>
-
-                </Box>
-
-                {/* --------------------First Section Complete--------------- */}
-
-
-
-                {/* --------------------Second Section Start--------------- */}
-                <Box className='secondSection'>
-                    <Box className='expenseReportPerDay'>
-                        <Box>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
+                    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                        <Box className="spentThisMonth">
                             <Box>
                                 <Typography sx={{
                                     fontWeight: 500,
                                     fontSize: "14px",
-                                    lineHeight: "24px",
                                     letterSpacing: "-2%",
                                     color: "#B3B3B3"
-                                }}>expense reports per day</Typography>
-                            </Box>
-                            <Box>
+                                }}>Spent this month</Typography>
                                 <Typography sx={{
                                     fontSize: "24px",
                                     fontWeight: 600,
@@ -221,14 +131,106 @@ const NewDashboard = () => {
                                     color: "#1B2559"
                                 }}>$682.5</Typography>
                             </Box>
+                            <Box><img src={ChartImg} alt="" /></Box>
+                        </Box>
+                        <Box className="newClients">
+                            <Box sx={{ height: "56px", width: "56px", borderRadius: "50%", backgroundColor: "#0171BB", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <PeopleAltIcon sx={{ color: "#ffffff" }} />
+                            </Box>
+                            <Box className="">
+                                <Typography sx={{
+                                    fontWeight: 500,
+                                    fontSize: "14px",
+                                    letterSpacing: "-2%",
+                                    color: "#B3B3B3"
+                                }}>New clients</Typography>
+                                <Typography sx={{
+                                    fontSize: "24px",
+                                    fontWeight: 600,
+                                    lineHeight: "32px",
+                                    letterSpacing: "-2%",
+                                    color: "#1B2559"
+                                }}>321</Typography>
+                            </Box>
+                            <Box><img src={clientGraph} alt="" /></Box>
+                        </Box>
+                        <Box className="earning">
+                            <Box sx={{ height: "56px", width: "56px", borderRadius: "50%", backgroundColor: "#f4f7f6", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <BarChartRoundedIcon sx={{ color: "#0171BB" }} />
+                            </Box>
+                            <Box className="">
+                                <Typography sx={{
+                                    fontWeight: 500,
+                                    fontSize: "14px",
+                                    letterSpacing: "-2%",
+                                    color: "#B3B3B3"
+                                }}>Earning</Typography>
+                                <Typography sx={{
+                                    fontSize: "24px",
+                                    fontWeight: 600,
+                                    lineHeight: "32px",
+                                    letterSpacing: "-2%",
+                                    color: "#1B2559"
+                                }}>$350.40</Typography>
+                            </Box>
 
                         </Box>
-                        <Box sx={{ height: "33px", width: "33px", borderRadius: "7px", backgroundColor: "#F4F7FE", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                            <BarChartRoundedIcon sx={{ color: "#0171BB" }} />
+                        <Box className="activity">
+                            <Box className="">
+                                <Typography sx={{
+                                    fontWeight: 500,
+                                    fontSize: "14px",
+                                    letterSpacing: "-2%",
+                                    color: "#E9EDF7"
+                                }}>Activity</Typography>
+                                <Typography sx={{
+                                    fontSize: "24px",
+                                    fontWeight: 600,
+                                    lineHeight: "32px",
+                                    letterSpacing: "-2%",
+                                    color: "#ffffff"
+                                }}>$540.50</Typography>
+                            </Box>
+                            <Box><img src={activityGraph} alt="" /></Box>
                         </Box>
+
                     </Box>
-                    <Box>
-                        <TickPlacementBars />
+
+                    {/* --------------------First Section Complete--------------- */}
+
+
+
+                    {/* --------------------Second Section Start--------------- */}
+                    <Box className='secondSection'>
+                        <Box className='expenseReportPerDay'>
+                            <Box>
+                                <Box>
+                                    <Typography sx={{
+                                        fontWeight: 500,
+                                        fontSize: "14px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "-2%",
+                                        color: "#B3B3B3"
+                                    }}>expense reports per day</Typography>
+                                </Box>
+                                <Box>
+                                    <Typography sx={{
+                                        fontSize: "24px",
+                                        fontWeight: 600,
+                                        lineHeight: "32px",
+                                        letterSpacing: "-2%",
+                                        color: "#1B2559"
+                                    }}>$682.5</Typography>
+                                </Box>
+
+                            </Box>
+                            <Box sx={{ height: "33px", width: "33px", borderRadius: "7px", backgroundColor: "#F4F7FE", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <BarChartRoundedIcon sx={{ color: "#0171BB" }} />
+                            </Box>
+                        </Box>
+                        <Box>
+                            <TickPlacementBars />
+                        </Box>
                     </Box>
                 </Box>
 
