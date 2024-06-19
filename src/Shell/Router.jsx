@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../Access/Login";
-import DefaultLayout from "../Layout/DefaultLayout";
+// import DefaultLayout from "../Layout/DefaultLayout";
+import NewDefaultLayout from "../Layout/NewDefaultLayout";
 import ForgotPassword from "../Access/ForgotPassword";
 import Confirmation from "../Access/Confirmation";
 import Homepage from "../Pages/Homepage";
@@ -9,7 +10,7 @@ import EnterExpenseReport from "../Pages/EnterExpenseReport";
 import NewDashboard from "../Pages/NewDashboard";
 import TickPlacementBars from "../Pages/Chart";
 const WithLayout = ({ component }) => {
-  return <DefaultLayout>{component}</DefaultLayout>;
+  return <NewDefaultLayout>{component}</NewDefaultLayout>;
 };
 const Router = () => {
   return (
