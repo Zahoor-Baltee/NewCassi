@@ -258,7 +258,7 @@ const NewDashboard = () => {
                                     letteSpacing: "-2%",
                                     color: "#1B2559",
                                     marginBottom: "5px"
-                                }}>Absence Requests</Typography>
+                                }}>Abse Requests</Typography>
                             </Box>
                             <Box>
                                 <Box>
