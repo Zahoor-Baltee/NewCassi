@@ -86,6 +86,41 @@ const Root = styled(Box)({
         "& .MuiTypography-root": {
             lineHeight: "20px"
         },
+        "& .thirdSection": {
+            width: "475px",
+            height: "345px",
+            borderRadius: "20px",
+            backgroundColor: " #FFFFFF",
+            padding: "20px",
+            marginTop: "30px"
+        },
+        "& .approvedReport": {
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px"
+        },
+        "& .rejectedReport": {
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px"
+        },
+        "& .thirdSection": {
+            width: "475px",
+            height: "345px",
+            borderRadius: "20px",
+            backgroundColor: " #FFFFFF",
+            padding: "20px",
+        },
+        "& .approvedReport": {
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px"
+        },
+        "& .rejectedReport": {
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px"
+        }
 
 
 
@@ -649,7 +684,188 @@ const NewDashboard = () => {
                     </Box>
                     {/* --------------------Second Section End--------------- */}
                     {/* --------------------Third Section Start--------------- */}
+                    <Box>
+                        <Box className='thirdSection'>
+                            <Box sx={{ display: "flex", gap: "30px", }}>
+                                <Box className="approvedReport">
+                                    <Typography sx={{
+                                        fontWeight: "500",
+                                        fontSize: "12px",
+                                        letterSpacing: "-2%",
+                                        color: "#1EB25A"
+                                    }}>No. of Approved Reports: 13</Typography>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontWeight: "500",
+                                            fontSize: "12px",
+                                            letterSpacing: "-2%",
+                                            color: "#A3AEDO"
+                                        }}>Month of June</Typography>
+                                        <Typography sx={{
+                                            fontWeight: "700",
+                                            fontSize: "18px",
+                                            lineHeight: "32px",
+                                            letterSpacing: "-2%",
+                                            color: "#1B2559"
+                                        }}>Activity Report</Typography>
+                                    </Box>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontWeight: "700",
+                                            fontSize: "16px",
+                                            lineHeight: "28px",
+                                            letterSpacing: "-2%",
+                                            color: "#1B2559"
+                                        }}>Kids Allowance</Typography>
+                                        <Typography
+                                            sx={{
+                                                fontWeight: "500",
+                                                fontSize: "12px",
+                                                lineHeight: "20px",
+                                                letterSpacing: "-2%",
+                                                color: "#E11E1E"
+                                            }}
+                                        >Rejected</Typography>
+                                    </Box>
+                                    <Box>
+                                        <Typography
+                                            sx={{
+                                                fontWeight: "700",
+                                                fontSize: "16px",
+                                                lineHeight: "28px",
+                                                letterSpacing: "-2%",
+                                                color: "#1B2559"
+                                            }}
+                                        >Wearing Dinner</Typography>
+                                        <Typography
+                                            sx={{
+                                                fontWeight: "500",
+                                                fontSize: "12px",
+                                                lineHeight: "20px",
+                                                letterSpacing: "-2%",
+                                                color: "#1EB25A"
+                                            }}
+                                        >Approved</Typography>
+                                    </Box>
+                                    <Box>
+                                        <Typography
+                                            sx={{
+                                                fontWeight: "700",
+                                                fontSize: "16px",
+                                                lineHeight: "28px",
+                                                letterSpacing: "-2%",
+                                                color: "#1B2559"
+                                            }}
+                                        >Top Up</Typography>
+                                        <Typography
+                                            sx={{
+                                                fontWeight: "500",
+                                                fontSize: "12px",
+                                                lineHeight: "20px",
+                                                letterSpacing: "-2%",
+                                                color: "#1EB25A"
+                                            }}
+                                        >Approved</Typography>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ width: "3px", height: "185px", backgroundColor: "#27A9E0", borderRadius: "10px", marginTop: "65px" }}></Box>
+                                <Box className="rejectedReport">
+                                    <Typography
+                                        sx={{
+                                            fontWeight: "500",
+                                            fontSize: "12px",
+                                            letterSpacing: "-2%",
+                                            color: "#E53A3A"
+                                        }}
+                                    >No. of Rejected Reports: 5</Typography>
+                                    <Box sx={{ display: "flex", flexDirection: "column", borderRadius: "5px", }}>
+                                        <Button size="small"
+                                            sx={{
+                                                fontWeight: "500",
+                                                fontSize: "10px",
+                                                lineHeight: "23px",
+                                                letterSpacing: "-2%",
+                                                color: "#1B2559",
+                                                boxShadow: 1
+                                            }}
+                                        >Show Approved Reports</Button>
+                                        <Button size="small"
+                                            sx={{
+                                                fontWeight: "500",
+                                                fontSize: "10px",
+                                                lineHeight: "23px",
+                                                letterSpacing: "-2%",
+                                                color: "#A3AED0",
+                                                boxShadow: 1
+                                            }}
+                                        >Show Rejected Reports</Button>
+                                    </Box>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontWeight: "700",
+                                            fontSize: "16px",
+                                            lineHeight: "28px",
+                                            letterSpacing: "-2%",
+                                            color: "#1B2559"
+                                        }}>Tution Fees</Typography>
+                                        <Typography sx={{
+                                            fontWeight: "500",
+                                            fontSize: "12px",
+                                            lineHeight: "20px",
+                                            letterSpacing: "-2%",
+                                            color: "#1EB25A"
+                                        }}>Approved</Typography>
+                                    </Box>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontWeight: "700",
+                                            fontSize: "16px",
+                                            lineHeight: "28px",
+                                            letterSpacing: "-2%",
+                                            color: "#1B2559"
+                                        }}>Car Fuel</Typography>
+                                        <Typography sx={{
+                                            fontWeight: "500",
+                                            fontSize: "12px",
+                                            lineHeight: "20px",
+                                            letterSpacing: "-2%",
+                                            color: "#E11E1E"
+                                        }}>Rejected</Typography>
+                                    </Box>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontWeight: "700",
+                                            fontSize: "16px",
+                                            lineHeight: "28px",
+                                            letterSpacing: "-2%",
+                                            color: "#1B2559"
+                                        }}>Public Transport</Typography>
+                                        <Typography sx={{
+                                            fontWeight: "500",
+                                            fontSize: "12px",
+                                            lineHeight: "20px",
+                                            letterSpacing: "-2%",
+                                            color: "#E11E1E"
+                                        }}>Rejected</Typography>
+                                    </Box>
+                                </Box>
 
+                                <Box>
+                                    <MoreVertIcon />
+                                </Box>
+                            </Box>
+                            <Box sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "5px" }}>
+                                <Typography sx={{
+                                    fontWeight: 700,
+                                    fontSize: "16px",
+                                    lineHeight: "28px",
+                                    letteSpacing: "-2%",
+                                    color: "#0171BC"
+                                }}>View All</Typography>
+                                <ArrowRightAltRoundedIcon sx={{ color: "#0171BC" }} />
+                            </Box>
+                        </Box>
+                    </Box>
                 </Box>
             </Box>
         </Root>
