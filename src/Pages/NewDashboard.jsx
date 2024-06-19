@@ -1,4 +1,4 @@
-import { Box, TextField, InputAdornment, styled } from '@mui/material'
+import { Box, TextField, InputAdornment, styled, Divider, Button } from '@mui/material'
 import React from 'react'
 import Typography from "@mui/material/Typography";
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,12 +7,9 @@ import clientGraph from '../Assets/clientGraph.png';
 import activityGraph from '../Assets/activityGraph.png';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
+import TickPlacementBars from './Chart';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ArrowRightAltRoundedIcon from '@mui/icons-material/ArrowRightAltRounded';
-import TickPlacementBars from './Chart';
-import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
-
-
 
 const Root = styled(Box)({
     margin: 0,
@@ -71,8 +68,7 @@ const Root = styled(Box)({
             height: "345px",
             borderRadius: "20px",
             backgroundColor: " #FFFFFF",
-            // border: "1px dashed red",
-
+            BorderTop: "1px dashed red"
 
         },
         "& .expenseReportPerDay": {
@@ -80,20 +76,9 @@ const Root = styled(Box)({
             justifyContent: "space-between",
             padding: "20px 20px 0px 20px",
         },
-        "& .absenceRequests": {
 
-            width: "227px",
-            height: "345px",
-            borderRadius: "20px",
-            opacity: "0px",
-            backgroundColor: "#FFFFFF",
-            padding: "20px"
 
-        },
-        "& .MuiTypography-root": {
-            lineHeight: "20px"
-        }
-    },
+    }
 
 });
 const NewDashboard = () => {
@@ -109,14 +94,10 @@ const NewDashboard = () => {
                             letterSpacing: "-2%",
                             color: "#ABABAC"
                         }}>Hi User,</Typography>
-                        <Typography sx={{
-                            color: "#27A9E0",
-                            fontWeight: "600",
-                            fontSize: "34px",
-                            lineHeight: "42px",
-                        }}>Welcome to Caasi!</Typography>
+                        <Typography sx={{ color: "#27A9E0", fontWeight: "600", fontSize: "34px", lineHeight: "42px", }}>Welcome to Caasi!</Typography>
                     </Box>
                     <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+
                         <TextField
                             sx={{
                                 "& fieldset": { border: 'none' },
@@ -134,9 +115,8 @@ const NewDashboard = () => {
 
                     </Box>
                 </Box>
-                {/* --------------------Header Section Complete--------------- */}
+                {/* --------------------First Section--------------- */}
                 <Box sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
-                    {/* --------------------First Section--------------- */}
                     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                         <Box className="spentThisMonth">
                             <Box>
@@ -196,6 +176,7 @@ const NewDashboard = () => {
                                     color: "#1B2559"
                                 }}>$350.40</Typography>
                             </Box>
+
                         </Box>
                         <Box className="activity">
                             <Box className="">
@@ -215,8 +196,13 @@ const NewDashboard = () => {
                             </Box>
                             <Box><img src={activityGraph} alt="" /></Box>
                         </Box>
+
                     </Box>
+
                     {/* --------------------First Section Complete--------------- */}
+
+
+
                     {/* --------------------Second Section Start--------------- */}
                     <Box sx={{ display: "flex", gap: "20px" }}>
                         <Box className='secondSection'>
@@ -654,8 +640,12 @@ const NewDashboard = () => {
                     {/* --------------------Third Section Start--------------- */}
 
                 </Box>
+
+                {/* --------------------Third Section Start--------------- */}
+
+
             </Box>
-        </Root >
+        </Root>
     )
 }
 
