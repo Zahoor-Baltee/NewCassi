@@ -76,6 +76,17 @@ const Root = styled(Box)({
             justifyContent: "space-between",
             padding: "20px 20px 0px 20px",
         },
+        "& .absenceRequests": {
+            width: "227px",
+            height: "345px",
+            borderRadius: "20px",
+            backgroundColor: " #FFFFFF",
+            padding: "20px"
+        },
+        "& .MuiTypography-root": {
+            lineHeight: "20px"
+        },
+
 
 
     }
