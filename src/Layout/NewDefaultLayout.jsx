@@ -57,12 +57,12 @@ function ResponsiveDrawer(props) {
     const drawer = (
         <div>
             <Toolbar />
-            <Box sx={{ display: "flex", justifyContent: "center", height: "100px", }}>
+            <Box sx={{ display: "flex", justifyContent: "center", height: "50px", }}>
                 <img src={logo} alt="" />
             </Box>
             <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {['Dashboard', 'User', 'Expense Report', 'Activity', 'Setting'].map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
