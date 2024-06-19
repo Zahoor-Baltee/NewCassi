@@ -651,10 +651,6 @@ const NewDashboard = () => {
                     {/* --------------------Third Section Start--------------- */}
 
                 </Box>
-
-                {/* --------------------Third Section Start--------------- */}
-
-
             </Box>
         </Root>
     )
