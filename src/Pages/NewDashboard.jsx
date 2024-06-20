@@ -100,11 +100,11 @@ const Root = styled(Box)({
             flexDirection: "column",
             gap: "15px"
         },
-        "& .rejectedReport": {
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px"
-        },
+        // "& .rejectedReport": {
+        //     display: "flex",
+        //     flexDirection: "column",
+        //     gap: "10px"
+        // },
         "& .thirdSection": {
             width: "475px",
             height: "345px",
@@ -121,6 +121,13 @@ const Root = styled(Box)({
             display: "flex",
             flexDirection: "column",
             gap: "10px"
+        },
+        "& .activityReports": {
+            width: "350px",
+            padding: "20px !important",
+            borderRadius: "20px",
+            opacity: "0px",
+            backgroundColor: "#FFFFFF",
         }
 
 
@@ -985,49 +992,105 @@ const NewDashboard = () => {
                                 </Box>
                             </Box>
                         </Box>
-                        <Box sx={{
-                            width: "350px",
-                            padding: "20px !important",
-                            borderRadius: "20px",
-                            opacity: "0px",
-                            backgroundColor: "#FFFFFF",
-                        }}>
-                            <Box>
+                        <Box className="activityReports">
+                            <Box sx={{ marginTop: "20px" }}>
                                 <Typography sx={{
                                     fontWeight: 500,
                                     fontSize: "10px",
                                     lineHeight: "20px",
                                     letteSpacing: "-2%",
-                                    color: "#A3AED0"
-                                }}>Expense Report</Typography>
+                                    color: "#A3AED0",
+                                    marginBottom: "10px"
+                                }}>Pending Reports</Typography>
                                 <Typography sx={{
                                     fontWeight: 600,
                                     fontSize: "24px",
                                     lineHeight: "32px",
                                     letteSpacing: "-2%",
                                     color: "#1B2559",
-                                    marginBottom: "10px"
-                                }}>Pending Report</Typography>
+                                    marginBottom: "20px"
+                                }}>Activity Reports</Typography>
                             </Box>
-                            <Box sx={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+                            <Box sx={{ display: "flex", flexDirection: "column", gap: "25px" }}>
                                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                     <Box sx={{ display: "flex", gap: "10px" }}>
-                                        <Box sx={{ height: "60px", width: '4px', backgroundColor: "#018CEA", borderRadius: "16px" }}></Box>
+                                        <Box sx={{ height: "41px", width: '4px', backgroundColor: "#018CEA", borderRadius: "16px" }}></Box>
                                         <Box>
+                                            <Typography sx={{
+                                                fontWeight: 700,
+                                                fontSize: "14px",
+                                                lineHeight: "24px",
+                                                letteSpacing: "-2%",
+                                                color: "#1B2559"
+                                            }}>Joe West</Typography>
                                             <Typography sx={{
                                                 fontWeight: 500,
                                                 fontSize: "12px",
                                                 lineHeight: "20px",
                                                 letteSpacing: "-2%",
                                                 color: "#A3AED0"
-                                            }}>Joe West</Typography>
+                                            }}>Today, 16:36</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontWeight: 700,
+                                            fontSize: "14px",
+                                            lineHeight: "24px",
+                                            letteSpacing: "-2%",
+                                            color: "#E11E1E",
+                                            textAlign: "right",
+                                            borderBottom: "1px solid red"
+                                        }}>
+                                            Pending Approval
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                    <Box sx={{ display: "flex", gap: "10px" }}>
+                                        <Box sx={{ height: "41px", width: '4px', backgroundColor: "#018CEA", borderRadius: "16px" }}></Box>
+                                        <Box>
                                             <Typography sx={{
                                                 fontWeight: 700,
-                                                fontSize: "18px",
-                                                lineHeight: "32px",
+                                                fontSize: "14px",
+                                                lineHeight: "24px",
                                                 letteSpacing: "-2%",
                                                 color: "#1B2559"
-                                            }}>Design Course</Typography>
+                                            }}>Barry Allen</Typography>
+                                            <Typography sx={{
+                                                fontWeight: 500,
+                                                fontSize: "12px",
+                                                lineHeight: "20px",
+                                                letteSpacing: "-2%",
+                                                color: "#A3AED0"
+                                            }}>23 Jun, 13:06</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Box>
+                                        <Typography sx={{
+                                            fontWeight: 700,
+                                            fontSize: "14px",
+                                            lineHeight: "24px",
+                                            letteSpacing: "-2%",
+                                            color: "#E11E1E",
+                                            textAlign: "right",
+                                            borderBottom: "1px solid red"
+                                        }}>
+                                            Pending Approval
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                    <Box sx={{ display: "flex", gap: "10px" }}>
+                                        <Box sx={{ height: "41px", width: '4px', backgroundColor: "#018CEA", borderRadius: "16px" }}></Box>
+                                        <Box>
+                                            <Typography sx={{
+                                                fontWeight: 700,
+                                                fontSize: "14px",
+                                                lineHeight: "24px",
+                                                letteSpacing: "-2%",
+                                                color: "#1B2559"
+                                            }}>Felicity Smoke</Typography>
                                             <Typography sx={{
                                                 fontWeight: 500,
                                                 fontSize: "12px",
@@ -1051,88 +1114,7 @@ const NewDashboard = () => {
                                         </Typography>
                                     </Box>
                                 </Box>
-                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                    <Box sx={{ display: "flex", gap: "10px" }}>
-                                        <Box sx={{ height: "60px", width: '4px', backgroundColor: "#018CEA", borderRadius: "16px" }}></Box>
-                                        <Box>
-                                            <Typography sx={{
-                                                fontWeight: 500,
-                                                fontSize: "12px",
-                                                lineHeight: "20px",
-                                                letteSpacing: "-2%",
-                                                color: "#A3AED0"
-                                            }}>Joe West</Typography>
-                                            <Typography sx={{
-                                                fontWeight: 700,
-                                                fontSize: "18px",
-                                                lineHeight: "32px",
-                                                letteSpacing: "-2%",
-                                                color: "#1B2559"
-                                            }}>Design Course</Typography>
-                                            <Typography sx={{
-                                                fontWeight: 500,
-                                                fontSize: "12px",
-                                                lineHeight: "20px",
-                                                letteSpacing: "-2%",
-                                                color: "#A3AED0"
-                                            }}>21 Jun, 19:04</Typography>
-                                        </Box>
-                                    </Box>
-                                    <Box>
-                                        <Typography sx={{
-                                            fontWeight: 700,
-                                            fontSize: "14px",
-                                            lineHeight: "24px",
-                                            letteSpacing: "-2%",
-                                            color: "#E11E1E",
-                                            textAlign: "right",
-                                            borderBottom: "1px solid red"
-                                        }}>
-                                            Pending Approval
-                                        </Typography>
-                                    </Box>
-                                </Box>
-                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                    <Box sx={{ display: "flex", gap: "10px" }}>
-                                        <Box sx={{ height: "60px", width: '4px', backgroundColor: "#018CEA", borderRadius: "16px" }}></Box>
-                                        <Box>
-                                            <Typography sx={{
-                                                fontWeight: 500,
-                                                fontSize: "12px",
-                                                lineHeight: "20px",
-                                                letteSpacing: "-2%",
-                                                color: "#A3AED0"
-                                            }}>Joe West</Typography>
-                                            <Typography sx={{
-                                                fontWeight: 700,
-                                                fontSize: "18px",
-                                                lineHeight: "32px",
-                                                letteSpacing: "-2%",
-                                                color: "#1B2559"
-                                            }}>Design Course</Typography>
-                                            <Typography sx={{
-                                                fontWeight: 500,
-                                                fontSize: "12px",
-                                                lineHeight: "20px",
-                                                letteSpacing: "-2%",
-                                                color: "#A3AED0"
-                                            }}>21 Jun, 19:04</Typography>
-                                        </Box>
-                                    </Box>
-                                    <Box>
-                                        <Typography sx={{
-                                            fontWeight: 700,
-                                            fontSize: "14px",
-                                            lineHeight: "24px",
-                                            letteSpacing: "-2%",
-                                            color: "#E11E1E",
-                                            textAlign: "right",
-                                            borderBottom: "1px solid red"
-                                        }}>
-                                            Pending Approval
-                                        </Typography>
-                                    </Box>
-                                </Box>
+
                                 <Box sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "5px" }}>
                                     <Typography sx={{
                                         fontWeight: 700,
@@ -1140,9 +1122,9 @@ const NewDashboard = () => {
                                         lineHeight: "28px",
                                         letteSpacing: "-2%",
                                         color: "#0171BC",
-                                        marginTop: "10px"
+                                        // marginTop: "10px"
                                     }}>View all Pending Report</Typography>
-                                    <ArrowRightAltRoundedIcon sx={{ color: "#0171BC", marginTop: "5px" }} />
+                                    <ArrowRightAltRoundedIcon sx={{ color: "#0171BC", }} />
                                 </Box>
                             </Box>
                         </Box>
