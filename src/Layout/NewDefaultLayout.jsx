@@ -1,20 +1,22 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
+import PersonIcon from '@mui/icons-material/Person';
 import Toolbar from '@mui/material/Toolbar';
 import { styled } from '@mui/material';
 import logo from '../Assets/cassilogo.png'
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 const Root = styled(Box)({
     margin: 0,
@@ -24,10 +26,26 @@ const Root = styled(Box)({
     },
     "& .MuiToolbar-root": {
         minHeight: "0px"
+    },
+    "& .MuiListItemIcon-root": {
+        minWidth: "36px"
     }
 
 });
+const getIconByIndex = (index) => {
+    if (index === 0) {
+        return <DashboardIcon />
+    } else if (index === 1) {
+        return <PersonIcon />
+    } else if (index === 2) {
+        return <CalendarMonthIcon />
+    } else if (index === 3) {
+        return <ShowChartOutlinedIcon />
+    } else if (index === 4) {
+        return <SettingsOutlinedIcon />
+    }
 
+}
 
 const drawerWidth = 240;
 
@@ -52,26 +70,30 @@ function ResponsiveDrawer(props) {
     };
 
     const drawer = (
-        <div>
-            <Toolbar />
-            <Box sx={{ display: "flex", justifyContent: "center", height: "50px", }}>
-                <img src={logo} alt="" />
-            </Box>
-            <Divider />
-            <List>
-                {['Dashboard', 'User', 'Expense Report', 'Activity', 'Setting'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
+        <Root>
+            <Box>
+                <Toolbar />
+                <Box sx={{ display: "flex", justifyContent: "center", height: "50px", }}>
+                    <img src={logo} alt="logo" />
+                </Box>
+                <Divider />
+                <List>
+                    {['Dashboard', 'User', 'Expense Report', 'Activity', 'Setting'].map((text, index) => (
+                        <ListItem key={text} disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    {getIconByIndex(index)}
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItemButton>
 
-        </div>
+                        </ListItem>
+
+                    ))}
+                </List>
+
+            </Box>
+        </Root>
     );
 
     // Remove this const when copying and pasting into your project.

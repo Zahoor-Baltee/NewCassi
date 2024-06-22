@@ -1011,7 +1011,7 @@ const NewDashboard = () => {
                                     marginBottom: "20px"
                                 }}>Activity Reports</Typography>
                             </Box>
-                            <Box sx={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+                            <Box sx={{ display: "flex", flexDirection: "column", gap: "25ooopx" }}>
                                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                     <Box sx={{ display: "flex", gap: "10px" }}>
                                         <Box sx={{ height: "41px", width: '4px', backgroundColor: "#018CEA", borderRadius: "16px" }}></Box>
