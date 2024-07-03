@@ -8,6 +8,7 @@ import Confirmation from "../Access/Confirmation";
 import Homepage from "../Pages/Homepage";
 import EnterExpenseReport from "../Pages/EnterExpenseReport";
 import NewDashboard from "../Pages/NewDashboard";
+import DashboardUsingGrid from "../Pages/DashboardUsingGrid";
 import TickPlacementBars from "../Pages/Chart";
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
@@ -19,8 +20,9 @@ const Router = () => {
         <Route path="/" element={<Login />} />
         <Route
           path="/dashboard"
-          element={<WithLayout component={<NewDashboard />} />}
-        // element={<WithLayout component={<Homepage />} />}
+          // element={<WithLayout component={<NewDashboard />} />}
+          // element={<WithLayout component={<Homepage />} />}
+          element={<WithLayout component={<DashboardUsingGrid />} />}
         />
         <Route
           path="/enterexpensereport"

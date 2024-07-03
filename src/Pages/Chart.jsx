@@ -81,7 +81,7 @@ const dataset = [
 
 const chartSetting = {
     series: [{ dataKey: 'expenses', }],
-    height: 250,
+    height: 280,
     sx: {
         [`& .${axisClasses.directionY} .${axisClasses.label}`]: {
             transform: 'translateX(-10px)',
