@@ -10,6 +10,8 @@ import EnterExpenseReport from "../Pages/EnterExpenseReport";
 import NewDashboard from "../Pages/NewDashboard";
 import DashboardUsingGrid from "../Pages/DashboardUsingGrid";
 import TickPlacementBars from "../Pages/Chart";
+import User from "../Pages/User";
+import UserInformation from "../Pages/UserInformation";
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
 };
@@ -27,6 +29,14 @@ const Router = () => {
         <Route
           path="/enterexpensereport"
           element={<WithLayout component={<EnterExpenseReport />} />}
+        />
+        <Route
+          path="/user"
+          element={<WithLayout component={<User />} />}
+        />
+        <Route
+          path="/userinformation"
+          element={<WithLayout component={<UserInformation />} />}
         />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/confirmation" element={<Confirmation />} />

@@ -78,7 +78,7 @@ function ResponsiveDrawer(props) {
                 </Box>
                 <Divider />
                 <List>
-                    {['Dashboard', 'User', 'Expense Report', 'Activity', 'Setting'].map((text, index) => (
+                    {['Dashboard', 'User', 'Expense Report', 'Activity Report', 'Advanced Settings and Management', 'Reports and Export', 'Days of Absence'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>

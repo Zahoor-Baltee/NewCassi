@@ -1184,9 +1184,6 @@ const NewDashboard = () => {
                     </Box>
                     {/* --------------------Third Section End--------------- */}
                     {/* --------------------Fourth Section Start--------------- */}
-
-
-
                 </Box>
             </Box>
         </Root>
