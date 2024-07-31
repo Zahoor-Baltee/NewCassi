@@ -12,6 +12,8 @@ import DashboardUsingGrid from "../Pages/DashboardUsingGrid";
 import TickPlacementBars from "../Pages/Chart";
 import User from "../Pages/User";
 import UserInformation from "../Pages/UserInformation";
+import ExpenseReportTable from '../Componenets/ExpenseReportTable';
+
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
 };
@@ -37,6 +39,10 @@ const Router = () => {
         <Route
           path="/userinformation"
           element={<WithLayout component={<UserInformation />} />}
+        />
+        <Route
+          path="/expensereporttable"
+          element={<WithLayout component={<ExpenseReportTable />} />}
         />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/confirmation" element={<Confirmation />} />
