@@ -15,9 +15,7 @@ const Root = styled(Box)(({ theme }) => ({
     margin: 0,
     padding: 0,
     "& .mainContainer": {
-        // display: "flex",
-        // justifyContent: "center",
-        // alignItems: "center",
+
         padding: "20px",
         backgroundColor: "#f4f7fe",
         "& .cardContainer": {
@@ -25,8 +23,6 @@ const Root = styled(Box)(({ theme }) => ({
             padding: "20px",
             borderRadius: "20px",
             "@media (min-width:600px)": {
-                // width: "900px",
-
             },
             "& .cardpo": {
                 padding: "20px",

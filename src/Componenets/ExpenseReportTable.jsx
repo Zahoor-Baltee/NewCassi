@@ -10,8 +10,7 @@ import { Visibility, MoreVert } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import ArrowDropUpOutlinedIcon from '@mui/icons-material/ArrowDropUpOutlined';
-// import SwitchRightTwoToneIcon from '@mui/icons-material/SwitchRightTwoTone';
-
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const StatusButton = styled(Button)(({ status }) => ({
     color: status === 'Approved' ? '#fff' : '#000',
     backgroundColor: status === 'Approved' ? '#4caf50' : status === 'Pending' ? '#ff9800' : '#f44336',
@@ -25,12 +24,7 @@ const tableData = [
     { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
     { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
     { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
+
     // Add more rows as necessary
 ];
 const Root = styled(Box)({
@@ -44,6 +38,34 @@ const Root = styled(Box)({
             display: "flex",
             justifyContent: "space-between",
         },
+        "& .TableTags": {
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center"
+        },
+        "& .UpDownIcon": {
+            display: 'flex',
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 0,
+            padding: 0,
+            margin: 0
+        },
+        "& .TableTagsTexts": {
+            color: "#ffffff",
+            fontSize: "15px",
+            fontWeight: "600"
+        },
+        "& .upIcon": {
+            marginBottom: "-18px",
+            padding: "0px",
+            color: "#FFFFFF"
+        },
+        "& .downIcon": {
+            margin: 0,
+            padding: 0,
+            color: "#FFFFFF"
+        }
 
     }
 
@@ -99,7 +121,7 @@ function ExpenseReportTable() {
                         <Button sx={{
                             width: "237px",
                             height: "53px",
-                            textTransform: "lowercase"
+                            textTransform: "none"
                         }} variant="contained">Create Expense Report</Button>
                         <Box>
                             <FormControl sx={{ m: 1, minWidth: 120, backgroundColor: "#fff", color: "#F8F8F8" }}>
@@ -128,48 +150,48 @@ function ExpenseReportTable() {
                                     <Checkbox sx={{ color: "#ffffff" }} />
                                 </TableCell>
                                 <TableCell>
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                        <Typography variant="h6" sx={{ color: "#ffffff", fontSize: "15px", fontWeight: "600" }}>Employee</Typography>
-                                        <Box sx={{ display: 'flex', flexDirection: "column", alignItems: "center", gap: 0, padding: 0, margin: 0 }}>
-                                            <ArrowDropUpOutlinedIcon sx={{ marginBottom: "-18px", padding: "0px", color: "#FFFFFF" }} />
-                                            <ArrowDropDownOutlinedIcon sx={{ margin: 0, padding: 0, color: "#FFFFFF" }} />
+                                    <Box className="TableTags">
+                                        <Typography className='TableTagsTexts'>Employee</Typography>
+                                        <Box className="UpDownIcon">
+                                            <ArrowDropUpOutlinedIcon className='upIcon' />
+                                            <ArrowDropDownOutlinedIcon className='downIcon' />
                                         </Box>
                                     </Box>
                                 </TableCell>
                                 <TableCell>
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                        <Typography variant="h6" sx={{ color: "#ffffff", fontSize: "15px", fontWeight: "600" }}>Amount</Typography>
-                                        <Box sx={{ display: 'flex', flexDirection: "column", alignItems: "center", gap: 0, padding: 0, margin: 0 }}>
-                                            <ArrowDropUpOutlinedIcon sx={{ marginBottom: "-18px", padding: "0px", color: "#FFFFFF" }} />
-                                            <ArrowDropDownOutlinedIcon sx={{ margin: 0, padding: 0, color: "#FFFFFF" }} />
+                                    <Box className="TableTags">
+                                        <Typography className='TableTagsTexts'>Amount</Typography>
+                                        <Box className="UpDownIcon">
+                                            <ArrowDropUpOutlinedIcon className='upIcon' />
+                                            <ArrowDropDownOutlinedIcon className='downIcon' />
                                         </Box>
                                     </Box>
 
                                 </TableCell>
                                 <TableCell>
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                        <Typography variant="h6" sx={{ color: "#ffffff", fontSize: "15px", fontWeight: "600" }}>Date</Typography>
-                                        <Box sx={{ display: 'flex', flexDirection: "column", alignItems: "center", gap: 0, padding: 0, margin: 0 }}>
-                                            <ArrowDropUpOutlinedIcon sx={{ marginBottom: "-18px", padding: "0px", color: "#FFFFFF" }} />
-                                            <ArrowDropDownOutlinedIcon sx={{ margin: 0, padding: 0, color: "#FFFFFF" }} />
+                                    <Box className="TableTags">
+                                        <Typography className='TableTagsTexts'>Date</Typography>
+                                        <Box className="UpDownIcon">
+                                            <ArrowDropUpOutlinedIcon className='upIcon' sx={{}} />
+                                            <ArrowDropDownOutlinedIcon className='downIcon' />
                                         </Box>
                                     </Box>
                                 </TableCell>
                                 <TableCell>
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                        <Typography variant="h6" sx={{ color: "#ffffff", fontSize: "15px", fontWeight: "600" }}>View Report</Typography>
-                                        <Box sx={{ display: 'flex', flexDirection: "column", alignItems: "center", gap: 0, padding: 0, margin: 0 }}>
-                                            <ArrowDropUpOutlinedIcon sx={{ marginBottom: "-18px", padding: "0px", color: "#FFFFFF" }} />
-                                            <ArrowDropDownOutlinedIcon sx={{ margin: 0, padding: 0, color: "#FFFFFF" }} />
+                                    <Box className="TableTags">
+                                        <Typography className='TableTagsTexts'>View Report</Typography>
+                                        <Box className="UpDownIcon">
+                                            <ArrowDropUpOutlinedIcon className='upIcon' />
+                                            <ArrowDropDownOutlinedIcon className='downIcon' />
                                         </Box>
                                     </Box>
                                 </TableCell>
                                 <TableCell>
-                                    <Typography variant="h6" sx={{ color: "#ffffff", fontSize: "15px", fontWeight: "600" }}>Status</Typography>
+                                    <Typography className='TableTagsTexts'>Status</Typography>
 
                                 </TableCell>
                                 <TableCell>
-                                    <Typography variant="h6" sx={{ color: "#ffffff", fontSize: "15px", fontWeight: "600" }}>Action</Typography>
+                                    <Typography className='TableTagsTexts'>Action</Typography>
 
                                 </TableCell>
                             </TableRow>
@@ -194,20 +216,23 @@ function ExpenseReportTable() {
                                         </IconButton>
                                     </TableCell>
                                     <TableCell>
-                                        <StatusButton status={row.status}>{row.status}</StatusButton>
+                                        <StatusButton sx={{ width: "104px", textTransform: "none" }} status={row.status}>{row.status}</StatusButton>
                                     </TableCell>
                                     <TableCell>
-                                        <IconButton onClick={handleMenuClick}>
-                                            <MoreVert />
-                                        </IconButton>
-                                        <Menu
-                                            anchorEl={anchorEl}
-                                            open={Boolean(anchorEl)}
-                                            onClose={handleMenuClose}
-                                        >
-                                            <MenuItem onClick={handleMenuClose}>Action 1</MenuItem>
-                                            <MenuItem onClick={handleMenuClose}>Action 2</MenuItem>
-                                        </Menu>
+                                        <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                            <IconButton onClick={handleMenuClick}>
+                                                <MoreVert />
+                                            </IconButton>
+                                            <Menu
+                                                anchorEl={anchorEl}
+                                                open={Boolean(anchorEl)}
+                                                onClose={handleMenuClose}
+                                            >
+                                                <MenuItem onClick={handleMenuClose}>Action 1</MenuItem>
+                                                <MenuItem onClick={handleMenuClose}>Action 2</MenuItem>
+                                            </Menu>
+                                            <KeyboardArrowDownIcon />
+                                        </Box>
                                     </TableCell>
                                 </TableRow>
                             ))}
