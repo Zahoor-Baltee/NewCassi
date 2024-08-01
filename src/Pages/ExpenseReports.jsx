@@ -20,11 +20,16 @@ const Root = styled(Box)({
         "& .ReportContainer": {
             display: "flex",
             flexDirection: "column",
-            // gap: "15px",
             backgroundColor: "#ffffff",
             borderRadius: "5px",
             padding: "20px 50px",
         },
+        "& .Transportation": {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "10px"
+        }
     }
 
 });
@@ -61,7 +66,7 @@ function ExpenseReports() {
                         </Typography>
                     </Box>
                     <Box sx={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-                        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+                        <Box className='Transportation'>
                             <Button
                                 variant="contained"
 
@@ -76,7 +81,7 @@ function ExpenseReports() {
                             </Button>
                             <Info sx={{ color: "#DC3545" }} />
                         </Box>
-                        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+                        <Box className='Transportation'>
                             <Button
                                 variant="contained"
 
@@ -91,7 +96,7 @@ function ExpenseReports() {
                             </Button>
                             <CheckCircle sx={{ color: "#18AB56" }} />
                         </Box>
-                        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+                        <Box className='Transportation'>
                             <Button
                                 variant="contained"
 

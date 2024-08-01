@@ -14,6 +14,7 @@ import User from "../Pages/User";
 import UserInformation from "../Pages/UserInformation";
 import ExpenseReportTable from '../Componenets/ExpenseReportTable';
 import ExpenseReports from "../Pages/ExpenseReports";
+import ActivityReport from "../Pages/ActivityReport";
 
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
@@ -48,6 +49,10 @@ const Router = () => {
         <Route
           path="/expensereports"
           element={<WithLayout component={<ExpenseReports />} />}
+        />
+        <Route
+          path="/activityreport"
+          element={<WithLayout component={<ActivityReport />} />}
         />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/confirmation" element={<Confirmation />} />
