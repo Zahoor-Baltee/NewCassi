@@ -76,15 +76,6 @@ function ExpenseReportTable() {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleMenuClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-    };
 
     return (
         <Root>
@@ -220,17 +211,9 @@ function ExpenseReportTable() {
                                     </TableCell>
                                     <TableCell>
                                         <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                            <IconButton onClick={handleMenuClick}>
+                                            <IconButton>
                                                 <MoreVert />
                                             </IconButton>
-                                            <Menu
-                                                anchorEl={anchorEl}
-                                                open={Boolean(anchorEl)}
-                                                onClose={handleMenuClose}
-                                            >
-                                                <MenuItem onClick={handleMenuClose}>Action 1</MenuItem>
-                                                <MenuItem onClick={handleMenuClose}>Action 2</MenuItem>
-                                            </Menu>
                                             <KeyboardArrowDownIcon />
                                         </Box>
                                     </TableCell>

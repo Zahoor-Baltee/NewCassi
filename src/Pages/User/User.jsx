@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 
-import EnhancedTable from '../Componenets/UsersData';
+import EnhancedTable from '../../Componenets/UsersData';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',

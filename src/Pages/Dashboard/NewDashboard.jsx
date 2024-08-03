@@ -2,12 +2,12 @@ import { Box, TextField, InputAdornment, styled, Divider, Button } from '@mui/ma
 import React from 'react'
 import Typography from "@mui/material/Typography";
 import SearchIcon from '@mui/icons-material/Search';
-import ChartImg from '../Assets/chart.jpg';
-import clientGraph from '../Assets/clientGraph.png';
-import activityGraph from '../Assets/activityGraph.png';
+import ChartImg from '../../Assets/chart.jpg';
+import clientGraph from '../../Assets/clientGraph.png';
+import activityGraph from '../../Assets/activityGraph.png';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
-import TickPlacementBars from './Chart';
+import TickPlacementBars from '../../Componenets/Chart';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ArrowRightAltRoundedIcon from '@mui/icons-material/ArrowRightAltRounded';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';

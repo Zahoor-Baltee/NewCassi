@@ -8,7 +8,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import { CheckCircle, Info } from '@mui/icons-material';
-import Recepit from "../Assets/receipt.jpeg"
+import Recepit from "../../Assets/receipt.jpeg"
 
 const Root = styled(Box)({
     margin: 0,
