@@ -16,6 +16,7 @@ import ExpenseReportTable from '../Componenets/ExpenseReportTable';
 import ExpenseReports from "../Pages/Expense Reports/ExpenseReports";
 import ActivityReport from "../Pages/Activity Report/ActivityReport";
 import ReportsAndExport from "../Pages/Reports And Exports/ReportsAndExport";
+import AdvancedSettingAndManagement from "../Pages/Advanced Setting And Management/AdvancedSettingAndManagement";
 
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
@@ -58,6 +59,10 @@ const Router = () => {
         <Route
           path="/reportsandexport"
           element={<WithLayout component={<ReportsAndExport />} />}
+        />
+        <Route
+          path="/advancesetting"
+          element={<WithLayout component={<AdvancedSettingAndManagement />} />}
         />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/confirmation" element={<Confirmation />} />
