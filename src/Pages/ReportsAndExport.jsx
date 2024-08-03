@@ -6,24 +6,23 @@ import {
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import { Visibility, MoreVert } from '@mui/icons-material';
+// import { Visibility } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import ArrowDropUpOutlinedIcon from '@mui/icons-material/ArrowDropUpOutlined';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-const StatusButton = styled(Button)(({ status }) => ({
-    color: status === 'Approved' ? '#fff' : '#000',
-    backgroundColor: status === 'Approved' ? '#4caf50' : status === 'Pending' ? '#ff9800' : '#f44336',
-    pointerEvents: 'none',
-}));
+import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
+import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 
 const tableData = [
-    { id: 1, name: 'Albert Flores', lastName: 'Flores', amount: '$1000', date: '23 Feb 2024', status: 'Approved' },
-    { id: 2, name: 'Wade Warren', lastName: 'Warren', amount: '$1000', date: '23 Feb 2024', status: 'Approved' },
-    { id: 3, name: 'Ronald Richards', lastName: 'Richards', amount: '$1000', date: '23 Feb 2024', status: 'Pending' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
+    { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
+    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+    { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
+    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+    { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
+    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+    { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
+    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+
 
     // Add more rows as necessary
 ];
@@ -65,12 +64,18 @@ const Root = styled(Box)({
             margin: 0,
             padding: 0,
             color: "#FFFFFF"
+        },
+        "& .tableDeleteButton": {
+            width: "104px",
+            textTransform: "none",
+            backgroundColor: "#FF0000",
+            color: "#FFFFFF",
         }
 
     }
 
 });
-function ExpenseReportTable() {
+function ReportsAndExport() {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -115,14 +120,20 @@ function ExpenseReportTable() {
                     <Box sx={{
                         display: "flex",
                         justifyContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                        gap: "5px"
 
                     }}>
+                        <Button sx={{
+                            // width: "237px",
+                            height: "53px",
+                            textTransform: "none"
+                        }} variant="contained">create an export to accounting and HR software</Button>
                         <Button sx={{
                             width: "237px",
                             height: "53px",
                             textTransform: "none"
-                        }} variant="contained">Create Expense Report</Button>
+                        }} variant="contained">Generate Report</Button>
                         <Box>
                             <FormControl sx={{ m: 1, minWidth: 120, backgroundColor: "#fff", color: "#F8F8F8" }}>
                                 <Select
@@ -151,7 +162,7 @@ function ExpenseReportTable() {
                                 </TableCell>
                                 <TableCell>
                                     <Box className="TableTags">
-                                        <Typography className='TableTagsTexts'>Employee</Typography>
+                                        <Typography className='TableTagsTexts'>Report Name</Typography>
                                         <Box className="UpDownIcon">
                                             <ArrowDropUpOutlinedIcon className='upIcon' />
                                             <ArrowDropDownOutlinedIcon className='downIcon' />
@@ -160,38 +171,37 @@ function ExpenseReportTable() {
                                 </TableCell>
                                 <TableCell>
                                     <Box className="TableTags">
-                                        <Typography className='TableTagsTexts'>Amount</Typography>
+                                        <Typography className='TableTagsTexts'>Report Validation</Typography>
                                         <Box className="UpDownIcon">
                                             <ArrowDropUpOutlinedIcon className='upIcon' />
                                             <ArrowDropDownOutlinedIcon className='downIcon' />
                                         </Box>
                                     </Box>
+                                </TableCell>
+                                <TableCell>
+                                    <Box className="TableTags">
+                                        <Typography className='TableTagsTexts'>Report Type</Typography>
+                                        <Box className="UpDownIcon">
+                                            <ArrowDropUpOutlinedIcon className='upIcon' />
+                                            <ArrowDropDownOutlinedIcon className='downIcon' />
+                                        </Box>
+                                    </Box>
+                                </TableCell>
+                                <TableCell>
+                                    <Box className="TableTags">
+                                        <Typography className='TableTagsTexts'>Export</Typography>
+                                        <Box className="UpDownIcon">
+                                            <ArrowDropUpOutlinedIcon className='upIcon' />
+                                            <ArrowDropDownOutlinedIcon className='downIcon' />
+                                        </Box>
+                                    </Box>
+                                </TableCell>
+                                <TableCell>
+                                    <Typography className='TableTagsTexts'>Manage</Typography>
 
                                 </TableCell>
                                 <TableCell>
-                                    <Box className="TableTags">
-                                        <Typography className='TableTagsTexts'>Date</Typography>
-                                        <Box className="UpDownIcon">
-                                            <ArrowDropUpOutlinedIcon className='upIcon' />
-                                            <ArrowDropDownOutlinedIcon className='downIcon' />
-                                        </Box>
-                                    </Box>
-                                </TableCell>
-                                <TableCell>
-                                    <Box className="TableTags">
-                                        <Typography className='TableTagsTexts'>View Report</Typography>
-                                        <Box className="UpDownIcon">
-                                            <ArrowDropUpOutlinedIcon className='upIcon' />
-                                            <ArrowDropDownOutlinedIcon className='downIcon' />
-                                        </Box>
-                                    </Box>
-                                </TableCell>
-                                <TableCell>
-                                    <Typography className='TableTagsTexts'>Status</Typography>
-
-                                </TableCell>
-                                <TableCell>
-                                    <Typography className='TableTagsTexts'>Action</Typography>
+                                    <Typography className='TableTagsTexts'>Edit</Typography>
 
                                 </TableCell>
                             </TableRow>
@@ -203,35 +213,35 @@ function ExpenseReportTable() {
                                         <Checkbox />
                                     </TableCell>
                                     <TableCell>
-                                        <Typography variant="body2">{row.name}</Typography>
+                                        <Typography sx={{ fontWeight: "bold" }}>{row.name}</Typography>
                                         <Typography variant="caption" color="textSecondary">{row.lastName}</Typography>
                                     </TableCell>
                                     <TableCell>
-                                        <Typography variant="body2" sx={{ color: '#007bff' }}>{row.amount}</Typography>
+                                        <Typography >{row.date}</Typography>
                                     </TableCell>
-                                    <TableCell>{row.date}</TableCell>
+                                    <TableCell>{row.amount}</TableCell>
                                     <TableCell>
-                                        <IconButton color="primary">
-                                            <Visibility />
+                                        <IconButton>
+                                            <FileUploadOutlinedIcon />
                                         </IconButton>
                                     </TableCell>
                                     <TableCell>
-                                        <StatusButton sx={{ width: "104px", textTransform: "none" }} status={row.status}>{row.status}</StatusButton>
+                                        <Button className='tableDeleteButton' sx={{}} status={row.status}>{row.status}</Button>
                                     </TableCell>
                                     <TableCell>
                                         <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                             <IconButton onClick={handleMenuClick}>
-                                                <MoreVert />
+                                                <CreateOutlinedIcon />
                                             </IconButton>
-                                            <Menu
+                                            {/* <Menu
                                                 anchorEl={anchorEl}
                                                 open={Boolean(anchorEl)}
                                                 onClose={handleMenuClose}
                                             >
                                                 <MenuItem onClick={handleMenuClose}>Action 1</MenuItem>
                                                 <MenuItem onClick={handleMenuClose}>Action 2</MenuItem>
-                                            </Menu>
-                                            <KeyboardArrowDownIcon />
+                                            </Menu> */}
+                                            {/* <CreateOutlinedIcon /> */}
                                         </Box>
                                     </TableCell>
                                 </TableRow>
@@ -250,4 +260,4 @@ function ExpenseReportTable() {
     );
 }
 
-export default ExpenseReportTable;
+export default ReportsAndExport;

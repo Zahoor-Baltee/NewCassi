@@ -15,6 +15,7 @@ import UserInformation from "../Pages/UserInformation";
 import ExpenseReportTable from '../Componenets/ExpenseReportTable';
 import ExpenseReports from "../Pages/ExpenseReports";
 import ActivityReport from "../Pages/ActivityReport";
+import ReportsAndExport from "../Pages/ReportsAndExport";
 
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
@@ -54,11 +55,15 @@ const Router = () => {
           path="/activityreport"
           element={<WithLayout component={<ActivityReport />} />}
         />
+        <Route
+          path="/reportsandexport"
+          element={<WithLayout component={<ReportsAndExport />} />}
+        />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/confirmation" element={<Confirmation />} />
 
         <Route path="/productlist" element={<WithLayout component="" />} />
-        <Route path="/newdashboard" element={<NewDashboard />} />
+        <Route path="/dashboardusinggrid" element={<DashboardUsingGrid />} />
         <Route path="/chart" element={<TickPlacementBars />} />
       </Routes>
     </BrowserRouter>
