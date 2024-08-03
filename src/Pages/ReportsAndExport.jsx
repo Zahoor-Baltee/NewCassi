@@ -5,8 +5,6 @@ import {
 } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
-// import { Visibility } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import ArrowDropUpOutlinedIcon from '@mui/icons-material/ArrowDropUpOutlined';
@@ -22,8 +20,6 @@ const tableData = [
     { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
     { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
     { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
-
-
     // Add more rows as necessary
 ];
 const Root = styled(Box)({
@@ -125,7 +121,6 @@ function ReportsAndExport() {
 
                     }}>
                         <Button sx={{
-                            // width: "237px",
                             height: "53px",
                             textTransform: "none"
                         }} variant="contained">create an export to accounting and HR software</Button>
@@ -198,11 +193,9 @@ function ReportsAndExport() {
                                 </TableCell>
                                 <TableCell>
                                     <Typography className='TableTagsTexts'>Manage</Typography>
-
                                 </TableCell>
                                 <TableCell>
                                     <Typography className='TableTagsTexts'>Edit</Typography>
-
                                 </TableCell>
                             </TableRow>
                         </TableHead>
@@ -214,7 +207,6 @@ function ReportsAndExport() {
                                     </TableCell>
                                     <TableCell>
                                         <Typography sx={{ fontWeight: "bold" }}>{row.name}</Typography>
-                                        <Typography variant="caption" color="textSecondary">{row.lastName}</Typography>
                                     </TableCell>
                                     <TableCell>
                                         <Typography >{row.date}</Typography>
@@ -226,23 +218,12 @@ function ReportsAndExport() {
                                         </IconButton>
                                     </TableCell>
                                     <TableCell>
-                                        <Button className='tableDeleteButton' sx={{}} status={row.status}>{row.status}</Button>
+                                        <Button className='tableDeleteButton' status={row.status}>{row.status}</Button>
                                     </TableCell>
                                     <TableCell>
-                                        <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                            <IconButton onClick={handleMenuClick}>
-                                                <CreateOutlinedIcon />
-                                            </IconButton>
-                                            {/* <Menu
-                                                anchorEl={anchorEl}
-                                                open={Boolean(anchorEl)}
-                                                onClose={handleMenuClose}
-                                            >
-                                                <MenuItem onClick={handleMenuClose}>Action 1</MenuItem>
-                                                <MenuItem onClick={handleMenuClose}>Action 2</MenuItem>
-                                            </Menu> */}
-                                            {/* <CreateOutlinedIcon /> */}
-                                        </Box>
+                                        <IconButton onClick={handleMenuClick}>
+                                            <CreateOutlinedIcon />
+                                        </IconButton>
                                     </TableCell>
                                 </TableRow>
                             ))}
