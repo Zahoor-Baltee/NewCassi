@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Container, Grid, TextField, Typography, List, ListItem, ListItemText, ListItemSecondaryAction, MenuItem, Box, Menu, IconButton, Button, Paper, Accordion, AccordionSummary, AccordionDetails, Divider } from '@mui/material';
 import { CheckCircle, Cancel, Add, AttachFile } from '@mui/icons-material';
-import { styled } from '@mui/system';
+import styled from '@emotion/styled';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import format from 'date-fns/format';
@@ -57,14 +57,14 @@ const Root = styled(Grid)(({ theme }) => ({
     padding: "30px",
     "& .toolbarContainer": {
         width: '100%',
-        marginBottom: theme.spacing(2),
+        marginBottom: "16px",
     },
     "& .calendarContainer": {
         width: '75%',
     },
     "& .CommentSec": {
-        marginTop: theme.spacing(2),
-        padding: theme.spacing(2),
+        marginTop: "16px",
+        padding: "16px",
         backgroundColor: "#0075bc",
         border: "1px solid #0075bc",
         borderRadius: "10px",
@@ -85,14 +85,14 @@ const Root = styled(Grid)(({ theme }) => ({
         }
     },
     "& .attachmentSec": {
-        marginTop: theme.spacing(2),
-        padding: theme.spacing(2),
+        marginTop: "16px",
+        padding: "16px",
         display: 'flex',
         justifyContent: 'center',
     },
     "& .activityList": {
-        // marginTop: theme.spacing(2),
-        padding: theme.spacing(2),
+        marginTop: "16px",
+        padding: "16px",
         // maxHeight: '100vh',
         overflow: 'auto',
     },
@@ -119,10 +119,10 @@ const Root = styled(Grid)(({ theme }) => ({
         "& .formSection": {
             padding: "20px",
             boxShadow: "1px 2px 14px 1px rgba(0, 0, 0, 0.19)",
-            marginBottom: theme.spacing(1),
+            marginBottom: "8px",
         },
         "& .textField": {
-            // marginBottom: theme.spacing(1),
+            marginBottom: "8px",
 
             "& .input": {
                 border: "none",
@@ -130,7 +130,7 @@ const Root = styled(Grid)(({ theme }) => ({
             }
         },
         "& .accordion": {
-            // marginBottom: theme.spacing(2),
+            marginBottom: "16px",
         },
         "& .accordionSummary": {
             display: 'flex',
@@ -152,7 +152,7 @@ const Root = styled(Grid)(({ theme }) => ({
             }
         },
         "& .icon": {
-            marginRight: theme.spacing(1),
+            marginRight: "8px",
         },
     }
 }));

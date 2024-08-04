@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
-import { Button, Divider, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
