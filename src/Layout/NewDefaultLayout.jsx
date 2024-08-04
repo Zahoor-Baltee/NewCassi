@@ -11,13 +11,29 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import PersonIcon from '@mui/icons-material/Person';
 import Toolbar from '@mui/material/Toolbar';
-import { styled } from '@mui/material';
+import { AppBar, IconButton, styled, InputAdornment, TextField, FormControl, Select } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+
+
+import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 import logo from '../Assets/cassilogo.png'
+import Uae from '../Assets/uae.png'
+import Us from '../Assets/UsFlag.webp'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-
+import MenuIcon from '@mui/icons-material/Menu';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 const Root = styled(Box)({
     margin: 0,
     padding: 0,
@@ -104,32 +120,184 @@ function ResponsiveDrawer(props) {
     // Remove this const when copying and pasting into your project.
     const container = window !== undefined ? () => window().document.body : undefined;
 
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [age, setAge] = React.useState("eng");
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
+
+
+
+
     return (
         <Root>
             <Box sx={{ display: 'flex', padding: "0px" }}>
                 <CssBaseline />
-                {/* <AppBar
-                position="fixed"
-                sx={{
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
-                }}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
-                    </Typography>
-                </Toolbar>
-            </AppBar> */}
+                <AppBar
+                    position="fixed"
+                    sx={{
+                        backgroundColor: "#fff",
+                        width: { sm: `calc(100% - ${drawerWidth}px)` },
+                        ml: { sm: `${drawerWidth}px` },
+                    }}
+                >
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ mr: 2, display: { sm: 'none' } }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+                            <Box>
+                                <TextField
+                                    size='small'
+                                    fullWidth
+                                    sx={{
+                                        backgroundColor: "#f4f7fe",
+                                        "& fieldset": {
+                                            border: 'none',
+
+                                        },
+                                    }}
+                                    className='inputField'
+                                    placeholder='Search'
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <SearchIcon />
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                />
+                            </Box>
+                            <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
+                                <Box sx={{ display: "flex", alignItems: "center" }}>
+                                    <Box sx={{ width: "30px", height: "30px", borderRadius: "50%", border: "1px solid black", overflow: "hidden" }}>
+                                        <img src={Uae} alt="" width="100%" />
+                                        {/* <img src={Us} alt="" /> */}
+                                    </Box>
+                                    <FormControl sx={{ m: 1, minWidth: 120 }}>
+                                        <Select
+                                            size='small'
+                                            sx={{
+                                                border: "none",
+                                                "& .MuiOutlinedInput-notchedOutline": {
+                                                    border: "none"
+                                                }
+
+                                            }}
+                                            onChange={handleChange}
+                                            id="demo-controlled-open-select"
+                                            value={age}
+                                        >
+                                            <MenuItem value="eng">Eng (US)</MenuItem>
+                                            <MenuItem value="ur">Urdu</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Box>
+                                <Box>
+                                    <NotificationsNoneIcon sx={{ color: "black" }} />
+                                </Box>
+                                <Box>
+                                    <React.Fragment>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', backgroundColor: "#f4f7fe" }}>
+                                            <Tooltip title="Account settings">
+                                                <IconButton
+                                                    onClick={handleClick}
+                                                    size="medium"
+                                                    sx={{ borderRadius: 0 }}
+                                                    aria-controls={open ? 'account-menu' : undefined}
+                                                    aria-haspopup="true"
+                                                    aria-expanded={open ? 'true' : undefined}
+                                                >
+                                                    <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                                                    <Box sx={{ marginX: 1 }}>
+                                                        <Typography variant='subtitle1' sx={{ color: "black", lineHeight: 1.0 }}>John</Typography>
+                                                        <Typography variant='body2'>Admin</Typography>
+                                                    </Box>
+                                                    <KeyboardArrowDownIcon />
+                                                </IconButton>
+
+                                            </Tooltip>
+                                        </Box>
+                                        <Menu
+                                            anchorEl={anchorEl}
+                                            id="account-menu"
+                                            open={open}
+                                            onClose={handleClose}
+                                            onClick={handleClose}
+                                            PaperProps={{
+                                                elevation: 0,
+                                                sx: {
+                                                    overflow: 'visible',
+                                                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                                                    mt: 1.5,
+                                                    '& .MuiAvatar-root': {
+                                                        width: 32,
+                                                        height: 32,
+                                                        ml: -0.5,
+                                                        mr: 1,
+                                                    },
+                                                    '&::before': {
+                                                        content: '""',
+                                                        display: 'block',
+                                                        position: 'absolute',
+                                                        top: 0,
+                                                        right: 14,
+                                                        width: 10,
+                                                        height: 10,
+                                                        bgcolor: 'background.paper',
+                                                        transform: 'translateY(-50%) rotate(45deg)',
+                                                        zIndex: 0,
+                                                    },
+                                                },
+                                            }}
+                                            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                                        >
+                                            <MenuItem onClick={handleClose}>
+                                                <Avatar /> Profile
+                                            </MenuItem>
+                                            <MenuItem onClick={handleClose}>
+                                                <Avatar /> My account
+                                            </MenuItem>
+                                            <Divider />
+                                            <MenuItem onClick={handleClose}>
+                                                <ListItemIcon>
+                                                    <PersonAdd fontSize="small" />
+                                                </ListItemIcon>
+                                                Add another account
+                                            </MenuItem>
+                                            <MenuItem onClick={handleClose}>
+                                                <ListItemIcon>
+                                                    <Settings fontSize="small" />
+                                                </ListItemIcon>
+                                                Settings
+                                            </MenuItem>
+                                            <MenuItem onClick={handleClose}>
+                                                <ListItemIcon>
+                                                    <Logout fontSize="small" />
+                                                </ListItemIcon>
+                                                Logout
+                                            </MenuItem>
+                                        </Menu>
+                                    </React.Fragment>
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Toolbar>
+                </AppBar>
                 <Box
                     component="nav"
                     sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -165,13 +333,13 @@ function ResponsiveDrawer(props) {
                 </Box>
                 <Box
                     component="main"
-                    sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+                    sx={{ flexGrow: 1, p: 3, mt: 8, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
                 >
-                    <Toolbar />
+                    {/* <Toolbar /> */}
                     {props.children}
                 </Box>
             </Box>
-        </Root>
+        </Root >
     );
 }
 
