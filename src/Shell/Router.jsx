@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../Access/Login";
-// import DefaultLayout from "../Layout/DefaultLayout";
+import DefaultLayout from "../Layout/DefaultLayout";
 import NewDefaultLayout from "../Layout/NewDefaultLayout";
 import ForgotPassword from "../Access/ForgotPassword";
 import Confirmation from "../Access/Confirmation";
@@ -13,17 +13,11 @@ import TickPlacementBars from "../Componenets/Chart";
 import User from "../Pages/User/User";
 import UserInformation from "../Pages/User/UserInformation";
 import ExpenseReportTable from '../Componenets/ExpenseReportTable';
-<<<<<<< HEAD
-import ExpenseReports from "../Pages/ExpenseReports";
-import ActivityReport from "../Pages/ActivityReport";
-import ReportsAndExport from "../Pages/ReportsAndExport";
-import AddActivityReport from "../Pages/ActivityReports/AddActivity";
-=======
 import ExpenseReports from "../Pages/Expense Reports/ExpenseReports";
 import ActivityReport from "../Pages/Activity Report/ActivityReport";
+import AddActivity from "../Pages/ActivityReports/AddActivity"
 import ReportsAndExport from "../Pages/Reports And Exports/ReportsAndExport";
 import AdvancedSettingAndManagement from "../Pages/Advanced Setting And Management/AdvancedSettingAndManagement";
->>>>>>> 8826bd56c693e0abfe8cb9e429fd248c19f8bd13
 
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
@@ -77,7 +71,7 @@ const Router = () => {
         <Route path="/productlist" element={<WithLayout component="" />} />
         <Route path="/dashboardusinggrid" element={<DashboardUsingGrid />} />
         <Route path="/chart" element={<TickPlacementBars />} />
-        <Route path="/add/activity-reports" element={<WithLayout component={<AddActivityReport />} />} />
+        <Route path="activityreports" element={<WithLayout component={<AddActivity />} />} />
       </Routes>
     </BrowserRouter>
   );
