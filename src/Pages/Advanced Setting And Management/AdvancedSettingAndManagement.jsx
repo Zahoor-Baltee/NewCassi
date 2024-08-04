@@ -34,8 +34,8 @@ export default function AdvancedSettingAndManagement() {
                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <Typography sx={{ fontWeight: "bold" }}>Advanced Setting and Management</Typography>
                     <Box sx={{ display: "flex", gap: "15px" }}>
-                        <Button variant="text">Text</Button>
-                        <Button variant="contained">Contained</Button>
+                        <Button variant="text">Cancel</Button>
+                        <Button variant="contained">Save</Button>
                     </Box>
                 </Box>
                 <Box>
@@ -49,17 +49,81 @@ export default function AdvancedSettingAndManagement() {
                                     <Tab className='label-po' label="Notifications" value="4" />
                                 </TabList>
                             </Box>
-                            <TabPanel value="1">
-                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                    <Box>
-                                        <Typography label="Create Teams">Create Teams</Typography>
-                                        <Typography>Developement team</Typography>
-                                    </Box>
-                                    <Box>
-                                        <CreateOutlinedIcon />
+                            <TabPanel sx={{ display: "flex", flexDirection: "column", gap: "20px" }} value="1">
+                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                        <Box>
+                                            <Typography sx={{ fontWeight: "600" }}>Create Teams</Typography>
+                                            <Typography sx={{ color: "#959595" }}>Developement team</Typography>
+                                        </Box>
+                                        <Box>
+                                            <CreateOutlinedIcon />
+                                        </Box>
                                     </Box>
                                 </Box>
-                                <Divider />
+                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                        <Box>
+                                            <Typography sx={{ fontWeight: "600" }}>Create Teams</Typography>
+                                            <Typography sx={{ color: "#959595" }}>Create Departments</Typography>
+                                        </Box>
+                                        <Box>
+                                            <CreateOutlinedIcon />
+                                        </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                        <Box>
+                                            <Typography sx={{ fontWeight: "600" }}>Create Teams</Typography>
+                                            <Typography sx={{ color: "#959595" }}>Developement team</Typography>
+                                        </Box>
+                                        <Box>
+                                            <CreateOutlinedIcon />
+                                        </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                        <Box>
+                                            <Typography sx={{ fontWeight: "600" }}>Activity Reports</Typography>
+                                        </Box>
+                                        <Box>
+                                            <CreateOutlinedIcon />
+                                        </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                        <Box>
+                                            <Typography sx={{ fontWeight: "600" }}>Expense Reports</Typography>
+                                        </Box>
+                                        <Box>
+                                            <CreateOutlinedIcon />
+                                        </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                        <Box>
+                                            <Typography sx={{ fontWeight: "600" }}>configure all the categories for activity reports </Typography>
+                                        </Box>
+                                        <Box>
+                                            <CreateOutlinedIcon />
+                                        </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                        <Box>
+                                            <Typography sx={{ fontWeight: "600" }}>Delete User</Typography>
+                                            <Typography sx={{ color: "#959595" }}>Carlos Fonte</Typography>
+                                        </Box>
+                                        <Box>
+                                            <CreateOutlinedIcon />
+                                        </Box>
+                                    </Box>
+                                </Box>
                             </TabPanel>
                             <TabPanel value="2">Activity Report</TabPanel>
                             <TabPanel value="3">Expense Report</TabPanel>
