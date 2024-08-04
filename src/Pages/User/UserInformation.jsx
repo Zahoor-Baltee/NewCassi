@@ -6,10 +6,10 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Typography, Grid } from '@mui/material';
 
 
-import image from '../Assets/man.png';
-import expenseReportIcon from '../Assets/Icon.png';
-import activityReport from '../Assets/activityReport.png';
-import userAbsense from '../Assets/userAbsence.png';
+import image from '../../Assets/man.png';
+import expenseReportIcon from '../../Assets/Icon.png';
+import activityReport from '../../Assets/activityReport.png';
+import userAbsense from '../../Assets/userAbsence.png';
 
 const Root = styled(Box)(({ theme }) => ({
     margin: 0,

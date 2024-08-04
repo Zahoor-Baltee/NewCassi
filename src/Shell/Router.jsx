@@ -6,17 +6,24 @@ import NewDefaultLayout from "../Layout/NewDefaultLayout";
 import ForgotPassword from "../Access/ForgotPassword";
 import Confirmation from "../Access/Confirmation";
 import Homepage from "../Pages/Homepage";
-import EnterExpenseReport from "../Pages/EnterExpenseReport";
-import NewDashboard from "../Pages/NewDashboard";
-import DashboardUsingGrid from "../Pages/DashboardUsingGrid";
-import TickPlacementBars from "../Pages/Chart";
-import User from "../Pages/User";
-import UserInformation from "../Pages/UserInformation";
+import EnterExpenseReport from "../Pages/Expense Reports/EnterExpenseReport";
+import NewDashboard from "../Pages/Dashboard/NewDashboard";
+import DashboardUsingGrid from "../Pages/Dashboard/DashboardUsingGrid";
+import TickPlacementBars from "../Componenets/Chart";
+import User from "../Pages/User/User";
+import UserInformation from "../Pages/User/UserInformation";
 import ExpenseReportTable from '../Componenets/ExpenseReportTable';
+<<<<<<< HEAD
 import ExpenseReports from "../Pages/ExpenseReports";
 import ActivityReport from "../Pages/ActivityReport";
 import ReportsAndExport from "../Pages/ReportsAndExport";
 import AddActivityReport from "../Pages/ActivityReports/AddActivity";
+=======
+import ExpenseReports from "../Pages/Expense Reports/ExpenseReports";
+import ActivityReport from "../Pages/Activity Report/ActivityReport";
+import ReportsAndExport from "../Pages/Reports And Exports/ReportsAndExport";
+import AdvancedSettingAndManagement from "../Pages/Advanced Setting And Management/AdvancedSettingAndManagement";
+>>>>>>> 8826bd56c693e0abfe8cb9e429fd248c19f8bd13
 
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
@@ -59,6 +66,10 @@ const Router = () => {
         <Route
           path="/reportsandexport"
           element={<WithLayout component={<ReportsAndExport />} />}
+        />
+        <Route
+          path="/advancesetting"
+          element={<WithLayout component={<AdvancedSettingAndManagement />} />}
         />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/confirmation" element={<Confirmation />} />
