@@ -115,18 +115,8 @@ const Root = styled(Box)({
         //     flexDirection: "column",
         //     gap: "10px"
         // },
-        "& .thirdSection": {
-            width: "475px",
-            height: "345px",
-            borderRadius: "20px",
-            backgroundColor: " #FFFFFF",
-            padding: "20px",
-        },
-        "& .approvedReport": {
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px"
-        },
+
+
         "& .rejectedReport": {
             display: "flex",
             flexDirection: "column",

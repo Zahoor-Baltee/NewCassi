@@ -16,6 +16,7 @@ import ExpenseReportTable from '../Componenets/ExpenseReportTable';
 import ExpenseReports from "../Pages/ExpenseReports";
 import ActivityReport from "../Pages/ActivityReport";
 import ReportsAndExport from "../Pages/ReportsAndExport";
+import AddActivityReport from "../Pages/ActivityReports/AddActivity";
 
 const WithLayout = ({ component }) => {
   return <NewDefaultLayout>{component}</NewDefaultLayout>;
@@ -65,6 +66,7 @@ const Router = () => {
         <Route path="/productlist" element={<WithLayout component="" />} />
         <Route path="/dashboardusinggrid" element={<DashboardUsingGrid />} />
         <Route path="/chart" element={<TickPlacementBars />} />
+        <Route path="/add/activity-reports" element={<WithLayout component={<AddActivityReport />} />} />
       </Routes>
     </BrowserRouter>
   );

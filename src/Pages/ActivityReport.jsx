@@ -21,7 +21,7 @@ const StatusButton = styled(Button)(({ status }) => ({
 }));
 
 const tableData = [
-    { id: 1, name: 'Albert Flores', lastName: 'Flores', contact: '$1000', date: '23 Feb 2024', status: 'Approved'  },
+    { id: 1, name: 'Albert Flores', lastName: 'Flores', contact: '$1000', date: '23 Feb 2024', status: 'Approved' },
     { id: 2, name: 'Wade Warren', lastName: 'Warren', contact: '$1000', date: '23 Feb 2024', status: 'Approved' },
     { id: 3, name: 'Ronald Richards', lastName: 'Richards', contact: '$1000', date: '23 Feb 2024', status: 'Pending' },
     { id: 4, name: 'Courtney Henry', lastName: 'Courtney', contact: '$1000', date: '23 Feb 2024', status: 'Rejected' },
