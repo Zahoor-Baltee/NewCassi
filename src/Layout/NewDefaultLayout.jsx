@@ -21,14 +21,19 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 const Root = styled(Box)({
     margin: 0,
     padding: 0,
+    "& .MuiDrawer-paper": {
+        boxShadow: "0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+    },
     "& .MuiBox-root": {
-        padding: "0px"
+        padding: "0px",
+
     },
     "& .MuiToolbar-root": {
-        minHeight: "0px"
+        minHeight: "0px",
+        boxShadow: "0 6px 20px 0 rgba(0, 0, 0, 0.19)"
     },
     "& .MuiListItemIcon-root": {
-        minWidth: "36px"
+        minWidth: "36px",
     }
 
 });
@@ -78,7 +83,7 @@ function ResponsiveDrawer(props) {
                 </Box>
                 <Divider />
                 <List>
-                    {['Dashboard', 'User', 'Expense Report', 'Activity Report', 'Advanced Settings and Management', 'Reports and Export', 'Days of Absence'].map((text, index) => (
+                    {['Dashboard', 'User', 'Expense Report', 'Activity Report', 'Advanced Settings and Management', 'Reports and Export', 'Days of Absence', 'Activity Report'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>

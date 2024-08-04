@@ -112,11 +112,6 @@ const Root = styled(Box)({
             backgroundColor: " #FFFFFF",
             padding: "20px",
         },
-        "& .approvedReport": {
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px"
-        },
         "& .rejectedReport": {
             display: "flex",
             flexDirection: "column",
