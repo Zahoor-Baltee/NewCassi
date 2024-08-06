@@ -68,6 +68,9 @@ const Root = styled(Box)({
             padding: 0,
             color: "#FFFFFF"
         },
+        "& .css-1ygcj2i-MuiTableCell-root": {
+            width: "25%"
+        },
     }
 });
 
@@ -173,7 +176,7 @@ function ActivityReport() {
                                     <Box className="TableTags">
                                         <Typography className='TableTagsTexts'>Date</Typography>
                                         <Box className="UpDownIcon">
-                                            <ArrowDropUpOutlinedIcon className='upIcon' sx={{}} />
+                                            <ArrowDropUpOutlinedIcon className='upIcon' />
                                             <ArrowDropDownOutlinedIcon className='downIcon' />
                                         </Box>
                                     </Box>

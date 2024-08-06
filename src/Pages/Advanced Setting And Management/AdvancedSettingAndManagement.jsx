@@ -7,6 +7,9 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import logo from '../../Assets/cassilogo.png'
+import { MuiColorInput } from 'mui-color-input'
 
 
 const Root = styled(Box)(({ theme }) => ({
@@ -23,6 +26,11 @@ const Root = styled(Box)(({ theme }) => ({
 }));
 
 export default function AdvancedSettingAndManagement() {
+    const [colorValue, setColorValue] = React.useState('#ffffff')
+
+    const handleColorChange = (newValue) => {
+        setColorValue(newValue)
+    }
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -131,8 +139,34 @@ export default function AdvancedSettingAndManagement() {
                                             <Typography sx={{ color: "#959595" }}>Carlos Fonte</Typography>
                                         </Box>
                                         <Box>
-                                            <CreateOutlinedIcon />
+                                            <DeleteOutlinedIcon />
                                         </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-around" }}>
+                                    <Box>
+                                        <Typography variant='h6' fontWeight='bold'>Logo</Typography>
+                                        <Box sx={{ height: "200px", width: "250px" }}>
+                                            <img src={logo} height='100%' width='100%' alt="" />
+                                        </Box>
+                                        <Box>
+                                            <Button size="large">Remove</Button>
+                                            <Button size="large" variant="contained">Change Logo</Button>
+                                        </Box>
+                                    </Box>
+                                    <Box>
+                                        <Typography variant='h6' fontWeight='bold'>Login Screen Logo</Typography>
+                                        <Box sx={{ height: "200px", width: "250px" }}>
+                                            <img src={logo} height='100%' width='100%' alt="" />
+                                        </Box>
+                                        <Box>
+                                            <Button size="large">Remove</Button>
+                                            <Button size="large" variant="contained">Change Logo</Button>
+                                        </Box>
+                                    </Box>
+                                    <Box>
+                                        <Typography variant='h6' fontWeight='bold'>Background Color</Typography>
+                                        <MuiColorInput format="hex" value={colorValue} onChange={handleColorChange} />
                                     </Box>
                                 </Box>
                             </TabPanel>
