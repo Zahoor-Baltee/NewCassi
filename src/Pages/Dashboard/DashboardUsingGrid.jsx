@@ -474,7 +474,7 @@ const NewDashboard = () => {
                                                 lineHeight: "24px",
                                                 letteSpacing: "-2%",
                                                 color: "#A3AED0",
-                                                marginBottom: "20px"
+                                                // marginBottom: "20px"
                                             }}>Month of June</Typography>
                                         </Box>
                                         <Box sx={{ display: "flex", justifyContent: "space-between" }}>

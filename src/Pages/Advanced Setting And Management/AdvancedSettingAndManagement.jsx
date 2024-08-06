@@ -178,6 +178,6 @@ export default function AdvancedSettingAndManagement() {
                 </Box>
 
             </Box>
-        </Root>
+        </Root >
     );
 }

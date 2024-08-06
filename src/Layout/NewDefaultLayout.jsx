@@ -25,7 +25,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-import logo from '../Assets/cassilogo.png'
+import logo from '../Assets/cassimainlogo.png'
 import Uae from '../Assets/uae.png'
 import Us from '../Assets/UsFlag.webp'
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -110,10 +110,10 @@ function ResponsiveDrawer(props) {
         <Root>
             <Box>
                 <Toolbar />
-                <Box sx={{ display: "flex", justifyContent: "center", height: "50px", }}>
-                    <img src={logo} alt="logo" />
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80px", }}>
+                    <img src={logo} height='70%' width='90%' alt="logo" />
                 </Box>
-                <Divider />
+                {/* <Divider /> */}
                 <List>
                     {menuList.map((e, index) => (
                         <ListItem key={e.name} onClick={() => handleRoutes(e.url)} disablePadding>
