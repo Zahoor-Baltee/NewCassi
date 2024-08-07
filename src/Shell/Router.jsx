@@ -66,7 +66,7 @@ const Router = () => {
           path="/advancesetting"
           element={<WithLayout component={<AdvancedSettingAndManagement />} />}
         />
-         <Route
+        <Route
           path="/notify"
           element={<WithLayout component={<Notification />} />}
         />

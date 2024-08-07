@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, IconButton,
     Typography, Button, Pagination, Menu, MenuItem, Box
@@ -11,6 +11,7 @@ import { styled } from '@mui/system';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import ArrowDropUpOutlinedIcon from '@mui/icons-material/ArrowDropUpOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 const StatusButton = styled(Button)(({ status }) => ({
     color: status === 'Approved' ? '#fff' : '#000',
     backgroundColor: status === 'Approved' ? '#4caf50' : status === 'Pending' ? '#ff9800' : '#f44336',
@@ -22,11 +23,12 @@ const tableData = [
     { id: 2, name: 'Wade Warren', lastName: 'Warren', amount: '$1000', date: '23 Feb 2024', status: 'Approved' },
     { id: 3, name: 'Ronald Richards', lastName: 'Richards', amount: '$1000', date: '23 Feb 2024', status: 'Pending' },
     { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
-    { id: 4, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
+    { id: 5, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
+    { id: 6, name: 'Courtney Henry', lastName: 'Courtney', amount: '$1000', date: '23 Feb 2024', status: 'Rejected' },
 
     // Add more rows as necessary
 ];
+
 const Root = styled(Box)({
     margin: 0,
     padding: 0,
@@ -70,12 +72,40 @@ const Root = styled(Box)({
     }
 
 });
-function ExpenseReportTable() {
-    const [age, setAge] = React.useState('');
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
+function ExpenseReportTable() {
+    const [selected, setSelected] = useState([]);
+
+    const handleSelectAllClick = (event) => {
+        if (event.target.checked) {
+            const newSelected = tableData.map((row) => row.id);
+            setSelected(newSelected);
+            return;
+        }
+        setSelected([]);
     };
+
+    const handleCheckboxClick = (id) => {
+        const selectedIndex = selected.indexOf(id);
+        let newSelected = [];
+
+        if (selectedIndex === -1) {
+            newSelected = newSelected.concat(selected, id);
+        } else if (selectedIndex === 0) {
+            newSelected = newSelected.concat(selected.slice(1));
+        } else if (selectedIndex === selected.length - 1) {
+            newSelected = newSelected.concat(selected.slice(0, -1));
+        } else if (selectedIndex > 0) {
+            newSelected = newSelected.concat(
+                selected.slice(0, selectedIndex),
+                selected.slice(selectedIndex + 1),
+            );
+        }
+
+        setSelected(newSelected);
+    };
+
+    const isSelected = (id) => selected.indexOf(id) !== -1;
 
     return (
         <Root>
@@ -87,8 +117,8 @@ function ExpenseReportTable() {
                         <Typography>Show</Typography>
                         <FormControl sx={{ m: 1, minWidth: 120, backgroundColor: "#fff", color: "#F8F8F8" }}>
                             <Select
-                                value={age}
-                                onChange={handleChange}
+                                value={""}
+                                onChange={() => { }}
                                 displayEmpty
                                 inputProps={{ 'aria-label': 'Without label' }}
                             >
@@ -117,8 +147,8 @@ function ExpenseReportTable() {
                         <Box>
                             <FormControl sx={{ m: 1, minWidth: 120, backgroundColor: "#fff", color: "#F8F8F8" }}>
                                 <Select
-                                    value={age}
-                                    onChange={handleChange}
+                                    value={""}
+                                    onChange={() => { }}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Without label' }}
                                 >
@@ -138,7 +168,12 @@ function ExpenseReportTable() {
                         <TableHead sx={{ backgroundColor: "#0171BC" }}>
                             <TableRow>
                                 <TableCell padding="checkbox">
-                                    <Checkbox sx={{ color: "#ffffff" }} />
+                                    <Checkbox
+                                        sx={{ color: "#ffffff" }}
+                                        indeterminate={selected.length > 0 && selected.length < tableData.length}
+                                        checked={tableData.length > 0 && selected.length === tableData.length}
+                                        onChange={handleSelectAllClick}
+                                    />
                                 </TableCell>
                                 <TableCell>
                                     <Box className="TableTags">
@@ -188,37 +223,46 @@ function ExpenseReportTable() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {tableData.map((row) => (
-                                <TableRow key={row.id}>
-                                    <TableCell padding="checkbox">
-                                        <Checkbox />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Typography variant="body2">{row.name}</Typography>
-                                        <Typography variant="caption" color="textSecondary">{row.lastName}</Typography>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Typography variant="body2" sx={{ color: '#007bff' }}>{row.amount}</Typography>
-                                    </TableCell>
-                                    <TableCell>{row.date}</TableCell>
-                                    <TableCell>
-                                        <IconButton color="primary">
-                                            <Visibility />
-                                        </IconButton>
-                                    </TableCell>
-                                    <TableCell>
-                                        <StatusButton sx={{ width: "104px", textTransform: "none" }} status={row.status}>{row.status}</StatusButton>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                            <IconButton>
-                                                <MoreVert />
+                            {tableData.map((row) => {
+                                const isItemSelected = isSelected(row.id);
+                                return (
+                                    <TableRow
+                                        key={row.id}
+                                        selected={isItemSelected}
+                                    >
+                                        <TableCell padding="checkbox">
+                                            <Checkbox
+                                                checked={isItemSelected}
+                                                onClick={() => handleCheckboxClick(row.id)}
+                                            />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography variant="body2">{row.name}</Typography>
+                                            <Typography variant="caption" color="textSecondary">{row.lastName}</Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography variant="body2" sx={{ color: '#007bff' }}>{row.amount}</Typography>
+                                        </TableCell>
+                                        <TableCell>{row.date}</TableCell>
+                                        <TableCell>
+                                            <IconButton color="primary">
+                                                <Visibility />
                                             </IconButton>
-                                            <KeyboardArrowDownIcon />
-                                        </Box>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                                        </TableCell>
+                                        <TableCell>
+                                            <StatusButton sx={{ width: "104px", textTransform: "none" }} status={row.status}>{row.status}</StatusButton>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                                <IconButton>
+                                                    <MoreVert />
+                                                </IconButton>
+                                                <KeyboardArrowDownIcon />
+                                            </Box>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
                         </TableBody>
                     </Table>
                 </TableContainer>
@@ -229,7 +273,7 @@ function ExpenseReportTable() {
                     <Pagination count={1337} color="primary" sx={{ mt: 2 }} />
                 </Box>
             </Box>
-        </Root >
+        </Root>
     );
 }
 

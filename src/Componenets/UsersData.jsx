@@ -18,8 +18,9 @@ import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import img from '../Assets/man.png'
+import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 
-function createData(id, name, calories, fat, carbs, protein, image) {
+function createData(id, name, calories, fat, carbs, protein, image, BorderColorOutlinedIcon) {
     return {
         id,
         name,
@@ -28,23 +29,24 @@ function createData(id, name, calories, fat, carbs, protein, image) {
         carbs,
         protein,
         image,
+        BorderColorOutlinedIcon
     };
 }
 
 const rows = [
-    createData(1, 'Cupcake', 305, 3.7, 67, 4.3, img),
-    createData(2, 'Donut', 452, 25.0, 51, 4.9, img),
-    createData(3, 'Eclair', 262, 16.0, 24, 6.0, img),
-    createData(4, 'Frozen yoghurt', 34, 23, 24, 4.0, img),
-    createData(5, 'Gingerbread', 356, 16.0, 49, 3.9, img),
-    createData(6, 'Honeycomb', 408, 3.2, 87, 6.5, img),
-    createData(7, 'Ice cream sandwich', 237, 9.0, 37, 4.3, img),
-    createData(8, 'Jelly Bean', 375, 0.0, 94, 0.0, img),
-    createData(9, 'KitKat', 518, 26.0, 65, 7.0, img),
-    createData(10, 'Lollipop', 392, 0.2, 98, 0.0, img),
-    createData(11, 'Marshmallow', 318, 0, 81, 2.0, img),
-    createData(12, 'Nougat', 360, 19.0, 9, 37.0, img),
-    createData(13, 'Oreo', 437, 18.0, 63, 4.0, img),
+    createData(1, 'Cupcake', 'Sales', 'Developer', 'Active', <BorderColorOutlinedIcon />, img),
+    createData(2, 'Donut', 452, 25.0, 51, <BorderColorOutlinedIcon />, img),
+    createData(3, 'Eclair', 262, 16.0, 24, <BorderColorOutlinedIcon />, img),
+    createData(4, 'Frozen yoghurt', 34, 23, 24, <BorderColorOutlinedIcon />, img),
+    createData(5, 'Gingerbread', 356, 16.0, 49, <BorderColorOutlinedIcon />, img),
+    createData(6, 'Honeycomb', 408, 3.2, 87, <BorderColorOutlinedIcon />, img),
+    createData(7, 'Ice cream sandwich', 237, 9.0, 37, <BorderColorOutlinedIcon />, img),
+    createData(8, 'Jelly Bean', 375, 0.0, 94, <BorderColorOutlinedIcon />, img),
+    createData(9, 'KitKat', 518, 26.0, 65, <BorderColorOutlinedIcon />, img),
+    createData(10, 'Lollipop', 392, 0.2, 98, <BorderColorOutlinedIcon />, img),
+    createData(11, 'Marshmallow', 318, 0, 81, <BorderColorOutlinedIcon />, img),
+    createData(12, 'Nougat', 360, 19.0, 9, <BorderColorOutlinedIcon />, img),
+    createData(13, 'Oreo', 437, 18.0, 63, <BorderColorOutlinedIcon />, img),
 ];
 
 
@@ -133,7 +135,7 @@ function EnhancedTableHead(props) {
             <TableRow>
                 <TableCell padding="checkbox">
                     <Checkbox
-                        color="primary"
+                        sx={{ color: "#ffffff" }}
                         indeterminate={numSelected > 0 && numSelected < rowCount}
                         checked={rowCount > 0 && numSelected === rowCount}
                         onChange={onSelectAllClick}
@@ -143,10 +145,10 @@ function EnhancedTableHead(props) {
                     />
                 </TableCell>
                 <TableCell sx={{ color: "#FFFFFF", width: "300px", textAlign: "left" }}>Name</TableCell>
-                <TableCell align="left">Department</TableCell>
-                <TableCell align="left">Role</TableCell>
-                <TableCell align="left">Status</TableCell>
-                <TableCell align="left">Edit</TableCell>
+                <TableCell sx={{ color: "#FFFFFF", width: "300px", textAlign: "left" }}>Department</TableCell>
+                <TableCell sx={{ color: "#FFFFFF", width: "300px", textAlign: "left" }}>Role</TableCell>
+                <TableCell sx={{ color: "#FFFFFF", width: "300px", textAlign: "left" }}>Status</TableCell>
+                <TableCell sx={{ color: "#FFFFFF", width: "300px", textAlign: "left" }}>Edit</TableCell>
             </TableRow>
         </TableHead>
 

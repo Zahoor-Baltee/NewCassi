@@ -51,6 +51,11 @@ const Root = styled(Box)({
     },
     "& .MuiListItemIcon-root": {
         minWidth: "36px",
+    },
+    "& .countryImage": {
+        borderRadius: "50%",
+        objectFit: "cover"
+
     }
 
 });
@@ -66,7 +71,7 @@ function ResponsiveDrawer(props) {
     const menuList = [
         { name: "Dashboard", url: "/dashboard" },
         { name: "User", url: "/user" },
-        { name: "Activity Report", url: "/expensereports" },
+        { name: "Expense Report", url: "/expensereporttable" },
         { name: "Activity Report", url: "/activityreport" },
         { name: "Advanced Settings and Management", url: "/advancesetting" },
         { name: "Reports and Export", url: "/reportsandexport" },
@@ -110,7 +115,7 @@ function ResponsiveDrawer(props) {
         <Root>
             <Box>
                 <Toolbar />
-                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80px", }}>
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100px", }}>
                     <img src={logo} height='70%' width='90%' alt="logo" />
                 </Box>
                 {/* <Divider /> */}
@@ -199,8 +204,8 @@ function ResponsiveDrawer(props) {
                             </Box>
                             <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
                                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                                    <Box sx={{ width: "30px", height: "30px", borderRadius: "50%", border: "1px solid black", overflow: "hidden" }}>
-                                        <img src={Uae} alt="" width="100%" />
+                                    <Box sx={{ width: "30px", height: "30px", overflow: "hidden" }}>
+                                        <img className='countryImage' src={Uae} alt="" height='100%' width="100%" />
                                         {/* <img src={Us} alt="" /> */}
                                     </Box>
                                     <FormControl sx={{ m: 1, minWidth: 120 }}>

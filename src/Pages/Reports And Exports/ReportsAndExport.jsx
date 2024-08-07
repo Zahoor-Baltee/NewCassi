@@ -13,15 +13,16 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 
 const tableData = [
     { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
-    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
-    { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
-    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
-    { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
-    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
-    { id: 1, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
-    { id: 1, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+    { id: 2, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+    { id: 3, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
+    { id: 4, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+    { id: 5, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
+    { id: 6, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
+    { id: 7, name: 'Top Class Agency', date: '23 Feb 2024', amount: 'ad-hoc', status: 'Delete' },
+    { id: 8, name: 'Awesome Agency', date: '23 Feb 2024', amount: 'standard', status: 'Delete' },
     // Add more rows as necessary
 ];
+
 const Root = styled(Box)({
     margin: 0,
     padding: 0,
@@ -69,14 +70,47 @@ const Root = styled(Box)({
         }
 
     }
-
 });
+
 function ReportsAndExport() {
     const [age, setAge] = React.useState('');
+    const [selected, setSelected] = React.useState([]);
 
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+
+    const handleSelectAllClick = (event) => {
+        if (event.target.checked) {
+            const newSelecteds = tableData.map((n) => n.id);
+            setSelected(newSelecteds);
+            return;
+        }
+        setSelected([]);
+    };
+
+    const handleCheckboxClick = (event, id) => {
+        const selectedIndex = selected.indexOf(id);
+        let newSelected = [];
+
+        if (selectedIndex === -1) {
+            newSelected = newSelected.concat(selected, id);
+        } else if (selectedIndex === 0) {
+            newSelected = newSelected.concat(selected.slice(1));
+        } else if (selectedIndex === selected.length - 1) {
+            newSelected = newSelected.concat(selected.slice(0, -1));
+        } else if (selectedIndex > 0) {
+            newSelected = newSelected.concat(
+                selected.slice(0, selectedIndex),
+                selected.slice(selectedIndex + 1),
+            );
+        }
+
+        setSelected(newSelected);
+    };
+
+    const isSelected = (id) => selected.indexOf(id) !== -1;
+
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleMenuClick = (event) => {
@@ -153,7 +187,12 @@ function ReportsAndExport() {
                         <TableHead sx={{ backgroundColor: "#0171BC" }}>
                             <TableRow>
                                 <TableCell padding="checkbox">
-                                    <Checkbox sx={{ color: "#ffffff" }} />
+                                    <Checkbox
+                                        sx={{ color: "#ffffff" }}
+                                        indeterminate={selected.length > 0 && selected.length < tableData.length}
+                                        checked={tableData.length > 0 && selected.length === tableData.length}
+                                        onChange={handleSelectAllClick}
+                                    />
                                 </TableCell>
                                 <TableCell>
                                     <Box className="TableTags">
@@ -200,33 +239,42 @@ function ReportsAndExport() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {tableData.map((row) => (
-                                <TableRow key={row.id}>
-                                    <TableCell padding="checkbox">
-                                        <Checkbox />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Typography sx={{ fontWeight: "bold" }}>{row.name}</Typography>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Typography >{row.date}</Typography>
-                                    </TableCell>
-                                    <TableCell>{row.amount}</TableCell>
-                                    <TableCell>
-                                        <IconButton>
-                                            <FileUploadOutlinedIcon />
-                                        </IconButton>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Button className='tableDeleteButton' status={row.status}>{row.status}</Button>
-                                    </TableCell>
-                                    <TableCell>
-                                        <IconButton onClick={handleMenuClick}>
-                                            <CreateOutlinedIcon />
-                                        </IconButton>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                            {tableData.map((row) => {
+                                const isItemSelected = isSelected(row.id);
+                                return (
+                                    <TableRow
+                                        key={row.id}
+                                        selected={isItemSelected}
+                                    >
+                                        <TableCell padding="checkbox">
+                                            <Checkbox
+                                                checked={isItemSelected}
+                                                onChange={(event) => handleCheckboxClick(event, row.id)}
+                                            />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={{ fontWeight: "bold" }}>{row.name}</Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography >{row.date}</Typography>
+                                        </TableCell>
+                                        <TableCell>{row.amount}</TableCell>
+                                        <TableCell>
+                                            <IconButton>
+                                                <FileUploadOutlinedIcon />
+                                            </IconButton>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button className='tableDeleteButton' status={row.status}>{row.status}</Button>
+                                        </TableCell>
+                                        <TableCell>
+                                            <IconButton onClick={handleMenuClick}>
+                                                <CreateOutlinedIcon />
+                                            </IconButton>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
                         </TableBody>
                     </Table>
                 </TableContainer>

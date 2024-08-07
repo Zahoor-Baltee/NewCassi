@@ -72,8 +72,8 @@ export default function AdvancedSettingAndManagement() {
                                 <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
                                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                         <Box>
-                                            <Typography sx={{ fontWeight: "600" }}>Create Teams</Typography>
-                                            <Typography sx={{ color: "#959595" }}>Create Departments</Typography>
+                                            <Typography sx={{ fontWeight: "600" }}>Create Departments</Typography>
+                                            <Typography sx={{ color: "#959595" }}>Developement team</Typography>
                                         </Box>
                                         <Box>
                                             <CreateOutlinedIcon />
@@ -83,18 +83,7 @@ export default function AdvancedSettingAndManagement() {
                                 <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
                                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                         <Box>
-                                            <Typography sx={{ fontWeight: "600" }}>Create Teams</Typography>
-                                            <Typography sx={{ color: "#959595" }}>Create Departments</Typography>
-                                        </Box>
-                                        <Box>
-                                            <CreateOutlinedIcon />
-                                        </Box>
-                                    </Box>
-                                </Box>
-                                <Box sx={{ borderBottom: 3, borderColor: 'divider' }}>
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                        <Box>
-                                            <Typography sx={{ fontWeight: "600" }}>Create Teams</Typography>
+                                            <Typography sx={{ fontWeight: "600" }}>Create Roles</Typography>
                                             <Typography sx={{ color: "#959595" }}>Developement team</Typography>
                                         </Box>
                                         <Box>
